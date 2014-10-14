@@ -201,6 +201,9 @@
 .fa-envelope-o:before {
   content: "\f003";
 }
+.fa-email-o:before {
+  content: "\f003";
+}
 .fa-heart:before {
   content: "\f004";
 }
@@ -685,6 +688,9 @@
 .fa-globe:before {
   content: "\f0ac";
 }
+.fa-location:before {
+  content: "\f0ac";
+}
 .fa-wrench:before {
   content: "\f0ad";
 }
@@ -799,6 +805,9 @@
   content: "\f0de";
 }
 .fa-envelope:before {
+  content: "\f0e0";
+}
+.fa-email:before {
   content: "\f0e0";
 }
 .fa-linkedin:before {
