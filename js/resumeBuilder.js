@@ -2,6 +2,7 @@ var bio = {
 	firstName: 'Igor',
 	lastName: 'Ladkin',
 	role: 'Web Developer',
+	birthDate: 'Nov 24, 1988',
 	contacts: {
 		mobile: '8-911-557-5678',
 		email: 'dgkplan@googlemail.com',
@@ -16,7 +17,25 @@ var bio = {
 	hobbies :['Travelling', 'Crossfit', 'Surfing', 'Snowboarding'],
 
 	display: function() {
-		var formatAboutMe = function() {
+		var age = function() {
+			var birthDate = new Date(bio.birthDate), 
+			currentDate 	= new Date();
+
+			var getMonthDate = function(dateObject) {
+				return parseInt([dateObject.getMonth(), dateObject.getDate()].join(''));
+			};
+			
+			var age,
+			birthMonthDay 	= getMonthDate(birthDate),
+			birthYear		  	= birthDate.getYear(),
+			currentMonthDay	= getMonthDate(currentDate),
+			currentYear	 		= currentDate.getYear();
+
+			age = currentMonthDay >= birthMonthDay ? currentYear - birthYear : currentYear - birthYear - 1; 
+
+			return age;
+		}(), 
+		formatAboutMe = function() {
 			var aboutMeSection = $('#about'),
 			formattedAboutMe 	 = HTMLaboutMe.replace('%data%', bio.aboutMe);
 
@@ -27,7 +46,7 @@ var bio = {
 		formatHeader = function() {
 			var headerSection = $('#photo-header'),
 			formattedPhoto    = HTMLheaderPhoto.replace('%data%', bio.avatar),
-			formattedGreeting = HTMLheaderGreeting.replace('%data%', bio.firstName);
+			formattedGreeting = HTMLheaderGreeting.replace('%data%', bio.firstName).replace('%age%', age + 'YO');
 
 			headerSection.append(formattedPhoto).append(formattedGreeting);
 
@@ -75,6 +94,7 @@ var bio = {
 					
 					skillSection.append(formattedSkillItem);
 				}
+				skillSection.append(HTMLskillFooter);
 
 				return formattedSkillItem;
 			} else {
@@ -163,13 +183,6 @@ var education = {
 			date: "2014",
 			url: "https://s3.amazonaws.com/verify.edx.org/downloads/3fcdb6b46fb84ab69c5b8d74a057e72f/Certificate.pdf",
 			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore."
-		},
-		{
-			title: "Web Application Architectures",
-			school: "University of New Mexico",
-			date: "2014",
-			url: "https://www.coursera.org/maestro/api/certificate/get_certificate?course_id=971382",
-			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore."	
 		}
 	],
 
