@@ -130,4 +130,140 @@ var bio = {
 	}
 };
 
+var education = {
+	schools: [
+		{
+			school: "Northern Arctic Federal University",
+			date: "2011",
+			location: "Arkhangelsk, Russia",
+			majors: ["Applied Mathematics"],
+			degree: "Specialist",
+			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore."
+		},
+		{
+			school: "Centre for Development of Advanced Computing",
+			date: "2014",
+			location: "Delhi, India",
+			majors: ["Web Development with .NET"],
+			degree: "Certificate",
+			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore."
+		}
+	],
+	onlineCourses: [
+		{
+			title: "CS169.1x Engineering Software as a Service",
+			school: "BerkeleyX",
+			date: "2014",
+			url: "https://s3.amazonaws.com/verify.edx.org/downloads/6ed98ac9c1ac40d3be71aed4dafda704/Certificate.pdf",
+			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore."
+		},
+		{
+			title: "CS169.2x Engineering Software as a Service, Part 2",
+			school: "BerkeleyX",
+			date: "2014",
+			url: "https://s3.amazonaws.com/verify.edx.org/downloads/3fcdb6b46fb84ab69c5b8d74a057e72f/Certificate.pdf",
+			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore."
+		},
+		{
+			title: "Web Application Architectures",
+			school: "University of New Mexico",
+			date: "2014",
+			url: "https://www.coursera.org/maestro/api/certificate/get_certificate?course_id=971382",
+			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore."	
+		}
+	],
+
+	display: function() {
+		var formatEducation = function() {
+			var schools 						= education.schools,
+			courses 								= education.onlineCourses,
+			educationSection				= $('#education'),
+			formattedEducationError = '<p>There are no spectific information about education.</p>',
+			formattedEducationItem,
+			educationItemUrl;
+
+			if (schools.length > 0 || courses.length > 0) {
+				 educationSection.append(HTMLeducationHeader);
+				 educationSection = $('#education-list');
+
+				if (schools.length > 0) {
+					for (var i in schools) {
+						formattedEducationItem = HTMLeducationItem.replace('%date%', schools[i].date).replace('%data%', schools[i].school + 
+																		 '. ' + schools[i].majors[0]).replace('%description%', schools[i].description);
+						educationSection.append(formattedEducationItem);
+					}
+				}
+				if (courses.length > 0) {
+					for (var i in courses) {
+						educationItemUrl 			 = HTMLeducationItemURL.replace('%url%', courses[i].url).replace('%data%', courses[i].school + '. ' + courses[i].title);
+						formattedEducationItem = HTMLeducationItem.replace('%date%', courses[i].date).replace('%data%', educationItemUrl).replace('%description%', courses[i].description);
+						educationSection.append(formattedEducationItem);
+					}
+				}
+
+				return [formattedEducationItem];
+			} else {
+				educationSection.append(formattedEducationError);
+
+				return formattedEducationError;
+			} 
+		}();
+	}
+};
+
+var work = {
+	jobs: [
+	{
+		employer: "City Administration",
+		profession: "System Administrator",
+		location: "Arkhangelsk",
+		dates: "November, 2012 - August, 2013",
+		description: "Administration of local domain network, maintaining local web services and servers. " + 
+		"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? " +
+		"Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. " +
+		"Accusamus quo error repudiandae blanditiis ducimus inventore a, " +
+		"fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? " +
+		"Nemo delectus aliquid assumenda."
+	},
+	{
+		employer: "City Administration",
+		profession: "System Administrator / Web Developer",
+		location: "Arkhangelsk",
+		dates: "August, 2013 - Present Time",
+		description: "Administration of local domain network, maintaining local web services and servers. " + 
+		"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? " +
+		"Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. " +
+		"Accusamus quo error repudiandae blanditiis ducimus inventore a, " +
+		"fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? " +
+		"Nemo delectus aliquid assumenda."
+	}
+	],
+
+	display: function() {
+		var formatWork = function() {
+			var jobs 		= work.jobs,
+			workSection = $('#work'),
+			formattedWorkError = '<p>No previous experience.</p>',
+			formattedWorkItem;
+
+			if (jobs.length > 0) {
+				for (var i in jobs) {
+					formattedWorkItem = HTMLworkItem.replace('%employer%', jobs[i].employer).replace('%dates%', jobs[i].dates).
+																					 replace('%profession%', jobs[i].profession).replace('%description%', jobs[i].description);
+
+					workSection.append(formattedWorkItem);
+				}
+
+				return [formattedWorkItem];
+			} else {
+				workSection.append(formattedWorkError);
+
+				return formattedWorkError;
+			}
+		}();
+	}	
+};
+
 bio.display();
+education.display();
+work.display();
