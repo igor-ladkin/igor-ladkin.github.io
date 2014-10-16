@@ -1,0 +1,32 @@
+/*******************************************
+PROJECTS
+*******************************************/
+.project{
+  margin-bottom: 15px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.project .name{
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.project .year{
+  font-size: 1.3em;
+  opacity: 0.7;
+}
+.project .title{
+  font-size: 1.6em;
+  font-weight: bold;
+}
+.project .description{
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+/*******************************************
+SCREENSHOTS
+*******************************************/
+.screenshot{
+	margin-bottom: 15px;
+  padding-left: 0;
+  padding-right: 2px;
+}

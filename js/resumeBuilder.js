@@ -11,7 +11,12 @@ var bio = {
 		location: 'Arkhangelsk'
 	},
 	avatar: 'http://placehold.it/150x150',
-	aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+	aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur fuga ut voluptates inventore similique veniam, iste sint! ' +
+					 'Aspernatur harum possimus dolore deleniti fuga fugit amet quidem dolores eum quos libero consequatur quaerat, eaque nesciunt ' +
+					 'exercitationem eveniet, velit ea doloribus autem ipsum nisi delectus explicabo quas! Reiciendis itaque suscipit, ea reprehenderit.' +
+					 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus amet doloremque ex voluptates ut laudantium esse, nam ipsa. ' +
+					 'Dolor magnam quam voluptate, minima maxime. Blanditiis sint magni, praesentium, facere iste totam maiores natus, adipisci, nobis ' +
+					 'culpa temporibus alias voluptatum repellendus voluptas! Quibusdam veniam, consequuntur reiciendis nihil quo iusto ipsum inventore.',
 	skills: [['Ruby on Rails', 0.8], ['JavaScript', 0.65], ['HTML and CSS', 0.55], ['Board Riding', 0.4]],
 	languages: [['Russian', 100], ['English', 80]],
 	hobbies :['Travelling', 'Crossfit', 'Surfing', 'Snowboarding'],
@@ -46,7 +51,7 @@ var bio = {
 		formatHeader = function() {
 			var headerSection = $('#photo-header'),
 			formattedPhoto    = HTMLheaderPhoto.replace('%data%', bio.avatar),
-			formattedGreeting = HTMLheaderGreeting.replace('%data%', bio.firstName).replace('%age%', age + 'YO');
+			formattedGreeting = HTMLheaderGreeting.replace('%data%', bio.firstName).replace('%age%', age + 'YO').replace('%role%', bio.role);
 
 			headerSection.append(formattedPhoto).append(formattedGreeting);
 
@@ -226,30 +231,30 @@ var education = {
 
 var work = {
 	jobs: [
-	{
-		employer: "City Administration",
-		profession: "System Administrator",
-		location: "Arkhangelsk",
-		dates: "November, 2012 - August, 2013",
-		description: "Administration of local domain network, maintaining local web services and servers. " + 
-		"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? " +
-		"Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. " +
-		"Accusamus quo error repudiandae blanditiis ducimus inventore a, " +
-		"fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? " +
-		"Nemo delectus aliquid assumenda."
-	},
-	{
-		employer: "City Administration",
-		profession: "System Administrator / Web Developer",
-		location: "Arkhangelsk",
-		dates: "August, 2013 - Present Time",
-		description: "Administration of local domain network, maintaining local web services and servers. " + 
-		"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? " +
-		"Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. " +
-		"Accusamus quo error repudiandae blanditiis ducimus inventore a, " +
-		"fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? " +
-		"Nemo delectus aliquid assumenda."
-	}
+		{
+			employer: "City Hall",
+			profession: "System Administrator",
+			location: "Arkhangelsk",
+			dates: "November, 2012 - August, 2013",
+			description: "Administration of local domain network, maintaining local web services and servers. " + 
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? " +
+			"Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. " +
+			"Accusamus quo error repudiandae blanditiis ducimus inventore a, " +
+			"fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? " +
+			"Nemo delectus aliquid assumenda."
+		},
+		{
+			employer: "City Hall",
+			profession: "System Administrator / Web Developer",
+			location: "Arkhangelsk",
+			dates: "August, 2013 - Present Time",
+			description: "Administration of local domain network, maintaining local web services and servers. " + 
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? " +
+			"Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. " +
+			"Accusamus quo error repudiandae blanditiis ducimus inventore a, " +
+			"fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? " +
+			"Nemo delectus aliquid assumenda."
+		}
 	],
 
 	display: function() {
@@ -277,6 +282,71 @@ var work = {
 	}	
 };
 
+var portfolio = {
+	projects: [
+		{
+			name: 'Ruby Warrior',
+			date: 'October, 2014',
+			url: '#',
+			title: 'Personal Portfolio',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, officiis ea. Velit officia nobis aliquam asperiores, ' +
+									 'voluptatem facilis molestiae ea possimus provident voluptatibus deserunt consequatur iure, nostrum alias, minima, sed!',
+			screenshots: [
+				{
+					source: 'http://placehold.it/320x180',
+					alter: 'screenshot'
+				},
+				{
+					source: 'http://placehold.it/320x180',
+					alter: 'screenshot'
+				},
+				{
+					source: 'http://placehold.it/320x180',
+					alter: 'screenshot'
+				}
+			]
+		}
+	],
+
+	display: function() {
+		var formatPortfolio = function() {
+			var projects 					= portfolio.projects,
+			porfolioSection 			= $('#portfolio'),
+			formattedProjectError = '<p>There are no finished projects yet.</p>',
+			formattedProjectItem,
+			formattedProjectImage;
+
+			if (projects.length > 0) {
+				for (var i in projects) {
+					porfolioSection.append(HTMLprojectHeader);
+
+					var image, project 	 = projects[i],
+					formattedProjectItem = HTMLprojectItem.replace('%url%', project.url).replace('%name%', project.name).replace('%date%', project.date).
+																 replace('%title%', project.title).replace('%description%', project.description);
+
+					$('.project:last').append(formattedProjectItem);
+
+					if (project.screenshots.length > 0) {
+						for (var j in project.screenshots) {
+							image = project.screenshots[j];
+
+							formattedProjectImage = HTMLprojectImage.replace('%source%', image.source).replace('%alter%', image.alter);
+							$('.screenshots:last').append(formattedProjectImage);
+						}
+					}
+				}
+
+				return [formattedProjectItem];
+			} else {
+				porfolioSection.append(formattedWorkError);
+
+				return formattedWorkError;
+			}
+		}();
+	}
+};
+
 bio.display();
 education.display();
 work.display();
+portfolio.display();
