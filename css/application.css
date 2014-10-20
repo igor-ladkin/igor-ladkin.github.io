@@ -30,3 +30,15 @@ SCREENSHOTS
   padding-left: 0;
   padding-right: 2px;
 }
+/*******************************************
+MAP
+*******************************************/
+#map {
+  height: 350px;
+  display: block;
+  background-color: #ededed;
+}
+
+#mapDiv {
+  width: 100%;
+}

@@ -26,3 +26,5 @@ var HTMLprojectHeader = "<div class='project clearfix'></div>",
 		HTMLprojectItem		= "<div class='col-xs-3'><div class='name'><a href='%url%'>%name%</a></div><div class='year'>%date%</div></div><div class='col-xs-9'>" +
 												"<div class='title'>%title%</div><div class='description'>%description%</div><div class='screenshots'></div></div></div>",
 		HTMLprojectImage	= "<div class='col-xs-4 screenshot'><img class='img-responsive' src='%source%' alt='%alter%'></div>";
+
+var HTMLgoogleMap = "<div id='map' class='box'></div>";

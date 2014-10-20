@@ -8,9 +8,9 @@ var bio = {
 		email: 'dgkplan@googlemail.com',
 		skype: 'thrasherDGK',
 		github: 'thrasherDGK',
-		location: 'Arkhangelsk'
+		location: 'Arkhangelsk, Russia'
 	},
-	avatar: 'http://placehold.it/150x150',
+	avatar: 'images/raph.png',
 	aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur fuga ut voluptates inventore similique veniam, iste sint! ' +
 					 'Aspernatur harum possimus dolore deleniti fuga fugit amet quidem dolores eum quos libero consequatur quaerat, eaque nesciunt ' +
 					 'exercitationem eveniet, velit ea doloribus autem ipsum nisi delectus explicabo quas! Reiciendis itaque suscipit, ea reprehenderit.' +
@@ -158,36 +158,38 @@ var bio = {
 var education = {
 	schools: [
 		{
-			school: "Northern Arctic Federal University",
-			date: "2011",
-			location: "Arkhangelsk, Russia",
-			majors: ["Applied Mathematics"],
-			degree: "Specialist",
-			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore."
+			school: 'Northern Arctic Federal University',
+			date: '2011',
+			location: 'Arkhangelsk, Russia',
+			majors: ['Applied Mathematics'],
+			degree: 'Specialist',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
 		},
 		{
-			school: "Centre for Development of Advanced Computing",
-			date: "2014",
-			location: "Delhi, India",
-			majors: ["Web Development with .NET"],
-			degree: "Certificate",
-			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore."
+			school: 'Centre for Development of Advanced Computing',
+			date: '2014',
+			location: 'Delhi, India',
+			majors: ['Web Development with .NET'],
+			degree: 'Certificate',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
 		}
 	],
 	onlineCourses: [
 		{
-			title: "CS169.1x Engineering Software as a Service",
-			school: "BerkeleyX",
-			date: "2014",
-			url: "https://s3.amazonaws.com/verify.edx.org/downloads/6ed98ac9c1ac40d3be71aed4dafda704/Certificate.pdf",
-			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore."
+			title: 'CS169.1x Engineering Software as a Service',
+			school: 'BerkeleyX',
+			date: '2014',
+			location: 'Berkeley, CA, USA',
+			url: 'https://s3.amazonaws.com/verify.edx.org/downloads/6ed98ac9c1ac40d3be71aed4dafda704/Certificate.pdf',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
 		},
 		{
-			title: "CS169.2x Engineering Software as a Service, Part 2",
-			school: "BerkeleyX",
-			date: "2014",
-			url: "https://s3.amazonaws.com/verify.edx.org/downloads/3fcdb6b46fb84ab69c5b8d74a057e72f/Certificate.pdf",
-			description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore."
+			title: 'CS169.2x Engineering Software as a Service, Part 2',
+			school: 'BerkeleyX',
+			date: '2014',
+			location: 'Berkeley, CA, USA',
+			url: 'https://s3.amazonaws.com/verify.edx.org/downloads/3fcdb6b46fb84ab69c5b8d74a057e72f/Certificate.pdf',
+			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
 		}
 	],
 
@@ -232,28 +234,40 @@ var education = {
 var work = {
 	jobs: [
 		{
-			employer: "City Hall",
-			profession: "System Administrator",
-			location: "Arkhangelsk",
-			dates: "November, 2012 - August, 2013",
-			description: "Administration of local domain network, maintaining local web services and servers. " + 
-			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? " +
-			"Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. " +
-			"Accusamus quo error repudiandae blanditiis ducimus inventore a, " +
-			"fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? " +
-			"Nemo delectus aliquid assumenda."
+			employer: 'Casting Agency',
+			profession: 'Crowd Scenes Actor',
+			location: 'Los-Angeles, CA',
+			dates: 'June, 2010 - August, 2010',
+			description: 'Crowd scenes actor in different tv shows and music videos. ' + 
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? ' +
+			'Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. ' +
+			'Accusamus quo error repudiandae blanditiis ducimus inventore a, ' +
+			'fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? ' +
+			'Nemo delectus aliquid assumenda.'
 		},
 		{
-			employer: "City Hall",
-			profession: "System Administrator / Web Developer",
-			location: "Arkhangelsk",
-			dates: "August, 2013 - Present Time",
-			description: "Administration of local domain network, maintaining local web services and servers. " + 
-			"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? " +
-			"Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. " +
-			"Accusamus quo error repudiandae blanditiis ducimus inventore a, " +
-			"fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? " +
-			"Nemo delectus aliquid assumenda."
+			employer: 'City Hall',
+			profession: 'System Administrator',
+			location: 'Arkhangelsk, Russia',
+			dates: 'November, 2012 - August, 2013',
+			description: 'Administration of local domain network, maintaining local web services and servers. ' + 
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? ' +
+			'Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. ' +
+			'Accusamus quo error repudiandae blanditiis ducimus inventore a, ' +
+			'fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? ' +
+			'Nemo delectus aliquid assumenda.'
+		},
+		{
+			employer: 'City Hall',
+			profession: 'System Administrator / Web Developer',
+			location: 'Arkhangelsk, Russia',
+			dates: 'August, 2013 - Present Time',
+			description: 'Administration of local domain network, maintaining local web services and servers. ' + 
+			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? ' +
+			'Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. ' +
+			'Accusamus quo error repudiandae blanditiis ducimus inventore a, ' +
+			'fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? ' +
+			'Nemo delectus aliquid assumenda.'
 		}
 	],
 
@@ -346,7 +360,108 @@ var portfolio = {
 	}
 };
 
+var map = {
+	initialize: function() {
+
+		var map, locations, 
+		mapOptions = {
+			disableDefaultUI: true
+		};
+
+		map = new google.maps.Map(document.querySelector('#map'), mapOptions);
+
+		locationFinder = function() {
+			var locations = [];
+			locations.push(bio.contacts.location);
+
+			for (var i in education.schools) {
+				locations.push(education.schools[i].location);
+			}
+
+			for (var i in work.jobs) {
+				locations.push(work.jobs[i].location);
+			}
+
+			return locations;
+		};
+
+		createMapMarker = function(placeData) {
+			// The next lines save location data from the search result object to local variables
+	    var lat 	 = placeData.geometry.location.k,  // latitude from the place service
+	    		lon 	 = placeData.geometry.location.B,  // longitude from the place service
+	    	 	name 	 = placeData.formatted_address,  	 // name of the place from the place service
+	    		bounds = window.mapBounds;            	 // current boundaries of the map window
+
+	    // marker is an object with additional data about the pin for a single location
+	    var marker = new google.maps.Marker({
+	      map: map,
+	      position: placeData.geometry.location,
+	      title: name
+	    });
+	    
+	    // infoWindows are the little helper windows that open when you click
+	    // or hover over a pin on a map. They usually contain more information
+	    // about a location.
+	    var infoWindow = new google.maps.InfoWindow({
+	      content: name
+	    });
+
+	    google.maps.event.addListener(marker, 'click', function() {
+	      infoWindow.open(map, marker);
+	    });
+
+	    // this is where the pin actually gets added to the map.
+	    // bounds.extend() takes in a map location object
+	    bounds.extend(new google.maps.LatLng(lat, lon));
+	    // fit the map to the new marker
+	    map.fitBounds(bounds);
+	    // center the map
+	    map.setCenter(bounds.getCenter());
+		};
+
+		callback = function(results, status) {
+	    if (status == google.maps.places.PlacesServiceStatus.OK) {
+	      createMapMarker(results[0])
+	    }
+	  };
+
+	  pinPoster = function(locations) {
+
+	    // creates a Google place search service object. PlacesService does the work of
+	    // actually searching for location data.
+	    var service = new google.maps.places.PlacesService(map);
+	    
+	    // Iterates through the array of locations, creates a search object for each location
+	    for (place in locations) {
+
+	      // the search request object
+	      var request = {
+	        query: locations[place]
+	      }
+
+	      // Actually searches the Google Maps API for location data and runs the callback 
+	      // function with the search results after each search.
+	      service.textSearch(request, callback);
+	    }
+	  };
+
+	  window.mapBounds = new google.maps.LatLngBounds();
+	  locations = locationFinder();
+    pinPoster(locations);
+	},
+
+	display: function() {
+		window.addEventListener('load', map.initialize);
+		window.addEventListener('resize', function(e) {
+  	// Make sure the map bounds get updated on page resize
+		map.fitBounds(mapBounds);
+		});
+		$('#mapDiv').append(HTMLgoogleMap);
+	} 
+};
+
 bio.display();
 education.display();
 work.display();
 portfolio.display();
+map.display();
