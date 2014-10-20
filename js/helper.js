@@ -11,7 +11,7 @@ var HTMLheaderPhoto 	 	 	 = "<div id='photo'><img src='%data%' alt='photo'></div
 														 "<span>Proficient</span></div><div class='legend-right legend'><span>Expert</span></div><div class='legend-right legend'>Master</div></div>",
 		HTMLlanguageHeader		 = "<div id='language-skills'></div>",
 		HTMLlanguageItem			 = "<div class='skill'>%data%</div>",
-		HTMLlanguageRating		 = "<div class='icons pull-right'><div class='icons-red' style='width: %rating%%; height: 14px;'></div></div>",
+		HTMLlanguageRating		 = "<div class='icons pull-right'><div class='icons-red' data-percent='%value%' style='width: %rating%%; height: 14px;'></div></div>",
 		HTMLhobbyItem 				 = "<div class='hobby'>%data%</div>";
 
 var HTMLeducationHeader  = "<ul id='education-list' class='clearfix'></ul>",

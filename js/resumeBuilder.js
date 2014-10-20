@@ -10,7 +10,7 @@ var bio = {
 		github: 'thrasherDGK',
 		location: 'Arkhangelsk, Russia'
 	},
-	avatar: 'images/raph.png',
+	avatar: 'images/avatar.png',
 	aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur fuga ut voluptates inventore similique veniam, iste sint! ' +
 					 'Aspernatur harum possimus dolore deleniti fuga fugit amet quidem dolores eum quos libero consequatur quaerat, eaque nesciunt ' +
 					 'exercitationem eveniet, velit ea doloribus autem ipsum nisi delectus explicabo quas! Reiciendis itaque suscipit, ea reprehenderit.' +
@@ -120,7 +120,7 @@ var bio = {
 			if (languages.length > 0) {
 				for (var i in languages) {
 					formattedLanguageItem 	= HTMLlanguageItem.replace('%data%', languages[i][0]);
-					formattedLanguageRating = HTMLlanguageRating.replace('%rating%', languages[i][1]);
+					formattedLanguageRating = HTMLlanguageRating.replace('%value%', languages[i][1]).replace('%rating%', languages[i][1]);
 
 					languageSection.append(formattedLanguageItem);
 					$('.skill:last').append(formattedLanguageRating);
@@ -307,15 +307,15 @@ var portfolio = {
 									 'voluptatem facilis molestiae ea possimus provident voluptatibus deserunt consequatur iure, nostrum alias, minima, sed!',
 			screenshots: [
 				{
-					source: 'http://placehold.it/320x180',
+					source: 'images/1.png',
 					alter: 'screenshot'
 				},
 				{
-					source: 'http://placehold.it/320x180',
+					source: 'images/2.png',
 					alter: 'screenshot'
 				},
 				{
-					source: 'http://placehold.it/320x180',
+					source: 'images/3.png',
 					alter: 'screenshot'
 				}
 			]
