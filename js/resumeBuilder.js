@@ -406,6 +406,7 @@ var map = {
 
     var map, locations, 
     mapOptions = {
+      zoomControl: true,
       disableDefaultUI: true
     };
 
@@ -494,13 +495,66 @@ var map = {
       map.fitBounds(mapBounds);
     });
 
-    var minZoomLevel = 1;
+    var minZoomLevel = 1,
+        maxZoomLevel = 6,
+        minLatValue  = 49.5,
+        currentLatValue;
+
+    var allowedBounds = new google.maps.LatLngBounds(new google.maps.LatLng(-49.5, -180),
+                                                     new google.maps.LatLng(49.5, 180));
+
+    // Change map bound depending on zoom level
+    var changeBounds = function(zoomValue) {
+      var calculateLat = function(zoomLevel) {
+        currentLatValue = minLatValue;
+
+        for (var i = 0; i < zoomLevel; i++) {
+          currentLatValue += 20 * (zoomLevel - 1) / Math.pow(2, zoomLevel - 1);  
+        }
+        
+        return currentLatValue;
+      };
+
+      return new google.maps.LatLngBounds(new google.maps.LatLng(-calculateLat(zoomValue - 1), -180),
+                                          new google.maps.LatLng(calculateLat(zoomValue - 1), 180));  
+    };
+
+    // Check if map center belongs to defined bounds
+    var checkCenter = function() {
+      if(allowedBounds.contains(map.getCenter())) {
+        return;
+      }
+      var mapCenter = map.getCenter();
+      var X = mapCenter.lng(),
+          Y = mapCenter.lat();
+
+      var AmaxX = allowedBounds.getNorthEast().lng(),
+          AmaxY = allowedBounds.getNorthEast().lat(),
+          AminX = allowedBounds.getSouthWest().lng(),
+          AminY = allowedBounds.getSouthWest().lat();
+
+      if (Y < AminY) { Y = AminY; }
+      if (Y > AmaxY) { Y = AmaxY; }
+   
+       map.setCenter(new google.maps.LatLng(Y,X));
+    };
+
+    // Limit zoom level
     google.maps.event.addListener(map, 'zoom_changed', function () {
       if (map.getZoom() < minZoomLevel) {
-        // Limit zoom level
         map.setZoom(minZoomLevel);
       }
+      else if (map.getZoom() > maxZoomLevel) {
+        map.setZoom(maxZoomLevel);
+      }
+
+      allowedBounds = changeBounds(map.getZoom());
+      checkCenter();
     });
+
+    google.maps.event.addListener(map, 'center_changed', function() {
+      checkCenter();  
+    });  
   },
 
   display: function() {
