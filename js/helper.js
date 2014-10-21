@@ -31,7 +31,7 @@ var HTMLprojectHeader = "<div class='project clearfix'></div>",
 var HTMLgoogleMap = "<div id='map' class='box'></div>";
 
 var HTMLmodalHeader = "<div class='modal fade' id='modalScreenshots-%index%' tabindex='-1' role='dialog' aria-labelledby='screenshotsModal' aria-hidden='true'>" +
-                      "<div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button class='close' type='button' data-dismiss='modal'>×</button>" +
+                      "<div class='modal-dialog modal-lg'><div class='modal-content my-modal-content'><div class='modal-header'><button class='close' type='button' data-dismiss='modal'>×</button>" +
                       "<h3 class='modal-title'>Screenshots for %project%</h3></div><div class='modal-body'><div id='modalCarousel-%carousel%' class='carousel'><div class='carousel-inner'></div>" +
                       "<a class='carousel-control left' href='#modalCarousel-%left%' data-slide='prev'><i class='glyphicon glyphicon-chevron-left'></i></a>" +
                       "<a class='carousel-control right' href='#modalCarousel-%right%' data-slide='next'><i class='glyphicon glyphicon-chevron-right'></i></a></div></div></div></div></div>",

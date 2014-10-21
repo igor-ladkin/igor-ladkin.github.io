@@ -33,12 +33,27 @@ SCREENSHOTS
 /*******************************************
 MAP
 *******************************************/
-#map {
+#map{
   height: 350px;
   display: block;
   background-color: #ededed;
 }
-
-#mapDiv {
+#mapDiv{
   width: 100%;
+}
+/*******************************************
+MODALS
+*******************************************/
+.my-modal-content{
+  border-radius: 0;
+}
+.my-modal-content h3{
+  font-family: 'Open Sans', Arial, Tahoma;
+  font-weight: 700;
+  font-size: 1.8em;
+  text-transform: uppercase;
+}
+.my-modal-content h3:before{
+  content: '//';
+  margin-right: 5px;
 }
