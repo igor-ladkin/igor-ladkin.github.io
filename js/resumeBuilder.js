@@ -1,463 +1,498 @@
 var bio = {
-	firstName: 'Igor',
-	lastName: 'Ladkin',
-	role: 'Web Developer',
-	birthDate: 'Nov 24, 1988',
-	contacts: {
-		mobile: '8-911-557-5678',
-		email: 'dgkplan@googlemail.com',
-		skype: 'thrasherDGK',
-		github: 'thrasherDGK',
-		location: 'Arkhangelsk, Russia'
-	},
-	avatar: 'images/avatar.png',
-	aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur fuga ut voluptates inventore similique veniam, iste sint! ' +
-					 'Aspernatur harum possimus dolore deleniti fuga fugit amet quidem dolores eum quos libero consequatur quaerat, eaque nesciunt ' +
-					 'exercitationem eveniet, velit ea doloribus autem ipsum nisi delectus explicabo quas! Reiciendis itaque suscipit, ea reprehenderit.' +
-					 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus amet doloremque ex voluptates ut laudantium esse, nam ipsa. ' +
-					 'Dolor magnam quam voluptate, minima maxime. Blanditiis sint magni, praesentium, facere iste totam maiores natus, adipisci, nobis ' +
-					 'culpa temporibus alias voluptatum repellendus voluptas! Quibusdam veniam, consequuntur reiciendis nihil quo iusto ipsum inventore.',
-	skills: [['Ruby on Rails', 0.8], ['JavaScript', 0.65], ['HTML and CSS', 0.55], ['Board Riding', 0.4]],
-	languages: [['Russian', 100], ['English', 80]],
-	hobbies :['Travelling', 'Crossfit', 'Surfing', 'Snowboarding'],
+  firstName: 'Igor',
+  lastName: 'Ladkin',
+  role: 'Web Developer',
+  birthDate: 'Nov 24, 1988',
+  contacts: {
+    mobile: '8-911-557-5678',
+    email: 'dgkplan@googlemail.com',
+    skype: 'thrasherDGK',
+    github: 'thrasherDGK',
+    location: 'Arkhangelsk, Russia'
+  },
+  avatar: 'images/avatar.png',
+  aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur fuga ut voluptates inventore similique veniam, iste sint! ' +
+           'Aspernatur harum possimus dolore deleniti fuga fugit amet quidem dolores eum quos libero consequatur quaerat, eaque nesciunt ' +
+           'exercitationem eveniet, velit ea doloribus autem ipsum nisi delectus explicabo quas! Reiciendis itaque suscipit, ea reprehenderit.' +
+           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus amet doloremque ex voluptates ut laudantium esse, nam ipsa. ' +
+           'Dolor magnam quam voluptate, minima maxime. Blanditiis sint magni, praesentium, facere iste totam maiores natus, adipisci, nobis ' +
+           'culpa temporibus alias voluptatum repellendus voluptas! Quibusdam veniam, consequuntur reiciendis nihil quo iusto ipsum inventore.',
+  skills: [['Ruby on Rails', 0.8], ['JavaScript', 0.65], ['HTML and CSS', 0.55], ['Board Riding', 0.4]],
+  languages: [['Russian', 100], ['English', 80]],
+  hobbies :['Travelling', 'Crossfit', 'Surfing', 'Snowboarding'],
 
-	display: function() {
-		var age = function() {
-			var birthDate = new Date(bio.birthDate), 
-			currentDate 	= new Date();
+  display: function() {
+    var age = function() {
+      var birthDate = new Date(bio.birthDate), 
+      currentDate   = new Date();
 
-			var getMonthDate = function(dateObject) {
-				return parseInt([dateObject.getMonth(), dateObject.getDate()].join(''));
-			};
-			
-			var age,
-			birthMonthDay 	= getMonthDate(birthDate),
-			birthYear		  	= birthDate.getYear(),
-			currentMonthDay	= getMonthDate(currentDate),
-			currentYear	 		= currentDate.getYear();
+      var getMonthDate = function(dateObject) {
+        return parseInt([dateObject.getMonth(), dateObject.getDate()].join(''));
+      };
+      
+      var age,
+      birthMonthDay   = getMonthDate(birthDate),
+      birthYear       = birthDate.getYear(),
+      currentMonthDay = getMonthDate(currentDate),
+      currentYear     = currentDate.getYear();
 
-			age = currentMonthDay >= birthMonthDay ? currentYear - birthYear : currentYear - birthYear - 1; 
+      age = currentMonthDay >= birthMonthDay ? currentYear - birthYear : currentYear - birthYear - 1; 
 
-			return age;
-		}(), 
-		formatAboutMe = function() {
-			var aboutMeSection = $('#about'),
-			formattedAboutMe 	 = HTMLaboutMe.replace('%data%', bio.aboutMe);
+      return age;
+    }(), 
+    formatAboutMe = function() {
+      var aboutMeSection = $('#about'),
+      formattedAboutMe   = HTMLaboutMe.replace('%data%', bio.aboutMe);
 
-			aboutMeSection.append(formattedAboutMe);
+      aboutMeSection.append(formattedAboutMe);
 
-			return [formattedAboutMe];
-		}(),
-		formatHeader = function() {
-			var headerSection = $('#photo-header'),
-			formattedPhoto    = HTMLheaderPhoto.replace('%data%', bio.avatar),
-			formattedGreeting = HTMLheaderGreeting.replace('%data%', bio.firstName).replace('%age%', age + 'YO').replace('%role%', bio.role);
+      return [formattedAboutMe];
+    }(),
+    formatHeader = function() {
+      var headerSection = $('#photo-header'),
+      formattedPhoto    = HTMLheaderPhoto.replace('%data%', bio.avatar),
+      formattedGreeting = HTMLheaderGreeting.replace('%data%', bio.firstName).replace('%age%', age + 'YO').replace('%role%', bio.role);
 
-			headerSection.append(formattedPhoto).append(formattedGreeting);
+      headerSection.append(formattedPhoto).append(formattedGreeting);
 
-			return [formattedPhoto, formattedGreeting];
-		}(),
-		formatContacts = function() {
-			var contacts 					= bio.contacts,
-			contactSection 				= $('#contacts'),
-			formattedContactError = '<p>There are no avaliable contacts.</p>', 
-			formattedContactIcon,
-			formattedContactTitle,
-			formattedContactDescription;
+      return [formattedPhoto, formattedGreeting];
+    }(),
+    formatContacts = function() {
+      var contacts          = bio.contacts,
+      contactSection        = $('#contacts'),
+      formattedContactError = '<p>There are no avaliable contacts.</p>', 
+      formattedContactIcon,
+      formattedContactTitle,
+      formattedContactDescription;
 
-			if (Object.keys(contacts).length > 0) {
-				for (var key in contacts) {
-					contactSection.append(HTMLcontactItem);
+      if (Object.keys(contacts).length > 0) {
+        for (var key in contacts) {
+          contactSection.append(HTMLcontactItem);
 
-					formattedContactIcon  			= HTMLcontactIcon.replace('%data%', key);
-					formattedContactTitle 			= HTMLcontactTitle.replace('%data%', key.toUpperCase());
-					formattedContactDescription = HTMLcontactDescription.replace('%data%', bio.contacts[key]);
+          formattedContactIcon        = HTMLcontactIcon.replace('%data%', key);
+          formattedContactTitle       = HTMLcontactTitle.replace('%data%', key.toUpperCase());
+          formattedContactDescription = HTMLcontactDescription.replace('%data%', bio.contacts[key]);
 
-					$('.contact-item:last').append(formattedContactIcon).append(formattedContactTitle).
-																	append(formattedContactDescription);
-				}
+          $('.contact-item:last').append(formattedContactIcon).append(formattedContactTitle).
+                                  append(formattedContactDescription);
+        }
 
-				return [formattedContactIcon, formattedContactTitle, formattedContactDescription];
-			} else {
-				contactSection.append(formattedContactError);
+        return [formattedContactIcon, formattedContactTitle, formattedContactDescription];
+      } else {
+        contactSection.append(formattedContactError);
 
-				return formattedContactError;
-			}
-		}(),
-		formatSkills = function() {
-			$('#skills').append(HTMLskillHeader);
+        return formattedContactError;
+      }
+    }(),
+    formatSkills = function() {
+      $('#skills').append(HTMLskillHeader);
 
-			var skills 					= bio.skills,
-			skillSection 				= $('.skills:last'),
-			formattedSkillError = '<p>There are no interesting skills.</p>',
-			formattedSkillItem;
+      var skills          = bio.skills,
+      skillSection        = $('.skills:last'),
+      formattedSkillError = '<p>There are no interesting skills.</p>',
+      formattedSkillItem;
 
-			if (skills.length > 0) {
-				for (var i in skills) {
-					formattedSkillItem = HTMLskillItem.replace('%data%', skills[i][0]).replace('%value%', skills[i][1]).
-																						 replace('%style%', (458 * skills[i][1]).toFixed(1));
-					
-					skillSection.append(formattedSkillItem);
-				}
-				skillSection.append(HTMLskillFooter);
+      if (skills.length > 0) {
+        for (var i in skills) {
+          formattedSkillItem = HTMLskillItem.replace('%data%', skills[i][0]).replace('%value%', skills[i][1]).
+                                             replace('%style%', (458 * skills[i][1]).toFixed(1));
+          
+          skillSection.append(formattedSkillItem);
+        }
+        skillSection.append(HTMLskillFooter);
 
-				return formattedSkillItem;
-			} else {
-				skillSection.append(formattedSkillError);
+        return formattedSkillItem;
+      } else {
+        skillSection.append(formattedSkillError);
 
-				return formattedSkillError;
-			}
-		}(),
-		formatLanguages = function() {
-			$('#languages').append(HTMLlanguageHeader);
+        return formattedSkillError;
+      }
+    }(),
+    formatLanguages = function() {
+      $('#languages').append(HTMLlanguageHeader);
 
-			var languages 				 = bio.languages,
-			languageSection 			 = $('#language-skills'),
-			formattedLanguageError = '<p>There are no well known languages.</p>',
-			formattedLanguageItem,
-			formattedLanguageRating;
+      var languages          = bio.languages,
+      languageSection        = $('#language-skills'),
+      formattedLanguageError = '<p>There are no well known languages.</p>',
+      formattedLanguageItem,
+      formattedLanguageRating;
 
-			if (languages.length > 0) {
-				for (var i in languages) {
-					formattedLanguageItem 	= HTMLlanguageItem.replace('%data%', languages[i][0]);
-					formattedLanguageRating = HTMLlanguageRating.replace('%value%', languages[i][1]).replace('%rating%', languages[i][1]);
+      if (languages.length > 0) {
+        for (var i in languages) {
+          formattedLanguageItem   = HTMLlanguageItem.replace('%data%', languages[i][0]);
+          formattedLanguageRating = HTMLlanguageRating.replace('%value%', languages[i][1]).replace('%rating%', languages[i][1]);
 
-					languageSection.append(formattedLanguageItem);
-					$('.skill:last').append(formattedLanguageRating);
-				}
+          languageSection.append(formattedLanguageItem);
+          $('.skill:last').append(formattedLanguageRating);
+        }
 
-				return [formattedLanguageItem, formattedLanguageRating];
-			} else {
-				languageSection.append(formattedLanguageError);
+        return [formattedLanguageItem, formattedLanguageRating];
+      } else {
+        languageSection.append(formattedLanguageError);
 
-				return formattedLanguageError;
-			}
-		}(),
-		formatHobbies = function() {
-			var hobbies 				= bio.hobbies,
-			hobbySection 			  = $('#hobbies'),
-			formattedHobbyError = '<p>There are no hobbies at all.</p>',
-			formattedHobbyItem;
+        return formattedLanguageError;
+      }
+    }(),
+    formatHobbies = function() {
+      var hobbies         = bio.hobbies,
+      hobbySection        = $('#hobbies'),
+      formattedHobbyError = '<p>There are no hobbies at all.</p>',
+      formattedHobbyItem;
 
-			if (hobbies.length > 0) {
-				for (var i in hobbies) {
-					formattedHobbyItem = HTMLhobbyItem.replace('%data%', hobbies[i]);
+      if (hobbies.length > 0) {
+        for (var i in hobbies) {
+          formattedHobbyItem = HTMLhobbyItem.replace('%data%', hobbies[i]);
 
-					hobbySection.append(formattedHobbyItem);
-				}
-				return [formattedHobbyItem];
-			} else {
-				hobbySection.append(formattedHobbyError);
+          hobbySection.append(formattedHobbyItem);
+        }
+        return [formattedHobbyItem];
+      } else {
+        hobbySection.append(formattedHobbyError);
 
-				return formattedHobbyError;
-			}
-		}();
-	}
+        return formattedHobbyError;
+      }
+    }();
+  }
 };
 
 var education = {
-	schools: [
-		{
-			school: 'Northern Arctic Federal University',
-			date: '2011',
-			location: 'Arkhangelsk, Russia',
-			majors: ['Applied Mathematics'],
-			degree: 'Specialist',
-			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
-		},
-		{
-			school: 'Centre for Development of Advanced Computing',
-			date: '2014',
-			location: 'Delhi, India',
-			majors: ['Web Development with .NET'],
-			degree: 'Certificate',
-			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
-		}
-	],
-	onlineCourses: [
-		{
-			title: 'CS169.1x Engineering Software as a Service',
-			school: 'BerkeleyX',
-			date: '2014',
-			location: 'Berkeley, CA, USA',
-			url: 'https://s3.amazonaws.com/verify.edx.org/downloads/6ed98ac9c1ac40d3be71aed4dafda704/Certificate.pdf',
-			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
-		},
-		{
-			title: 'CS169.2x Engineering Software as a Service, Part 2',
-			school: 'BerkeleyX',
-			date: '2014',
-			location: 'Berkeley, CA, USA',
-			url: 'https://s3.amazonaws.com/verify.edx.org/downloads/3fcdb6b46fb84ab69c5b8d74a057e72f/Certificate.pdf',
-			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
-		}
-	],
+  schools: [
+    {
+      school: 'Northern Arctic Federal University',
+      date: '2011',
+      location: 'Arkhangelsk, Russia',
+      majors: ['Applied Mathematics'],
+      degree: 'Specialist',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
+    },
+    {
+      school: 'Centre for Development of Advanced Computing',
+      date: '2014',
+      location: 'Delhi, India',
+      majors: ['Web Development with .NET'],
+      degree: 'Certificate',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
+    }
+  ],
+  onlineCourses: [
+    {
+      title: 'CS169.1x Engineering Software as a Service',
+      school: 'BerkeleyX',
+      date: '2014',
+      location: 'Berkeley, CA, USA',
+      url: 'https://s3.amazonaws.com/verify.edx.org/downloads/6ed98ac9c1ac40d3be71aed4dafda704/Certificate.pdf',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
+    },
+    {
+      title: 'CS169.2x Engineering Software as a Service, Part 2',
+      school: 'BerkeleyX',
+      date: '2014',
+      location: 'Berkeley, CA, USA',
+      url: 'https://s3.amazonaws.com/verify.edx.org/downloads/3fcdb6b46fb84ab69c5b8d74a057e72f/Certificate.pdf',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
+    }
+  ],
 
-	display: function() {
-		var formatEducation = function() {
-			var schools 						= education.schools,
-			courses 								= education.onlineCourses,
-			educationSection				= $('#education'),
-			formattedEducationError = '<p>There are no spectific information about education.</p>',
-			formattedEducationItem,
-			educationItemUrl;
+  display: function() {
+    var formatEducation = function() {
+      var schools             = education.schools,
+      courses                 = education.onlineCourses,
+      educationSection        = $('#education'),
+      formattedEducationError = '<p>There are no spectific information about education.</p>',
+      formattedEducationItem,
+      educationItemUrl;
 
-			if (schools.length > 0 || courses.length > 0) {
-				 educationSection.append(HTMLeducationHeader);
-				 educationSection = $('#education-list');
+      if (schools.length > 0 || courses.length > 0) {
+         educationSection.append(HTMLeducationHeader);
+         educationSection = $('#education-list');
 
-				if (schools.length > 0) {
-					for (var i in schools) {
-						formattedEducationItem = HTMLeducationItem.replace('%date%', schools[i].date).replace('%data%', schools[i].school + 
-																		 '. ' + schools[i].majors[0]).replace('%description%', schools[i].description);
-						educationSection.append(formattedEducationItem);
-					}
-				}
-				if (courses.length > 0) {
-					for (var i in courses) {
-						educationItemUrl 			 = HTMLeducationItemURL.replace('%url%', courses[i].url).replace('%data%', courses[i].school + '. ' + courses[i].title);
-						formattedEducationItem = HTMLeducationItem.replace('%date%', courses[i].date).replace('%data%', educationItemUrl).replace('%description%', courses[i].description);
-						educationSection.append(formattedEducationItem);
-					}
-				}
+        if (schools.length > 0) {
+          for (var i in schools) {
+            formattedEducationItem = HTMLeducationItem.replace('%date%', schools[i].date).replace('%data%', schools[i].school + 
+                                     '. ' + schools[i].majors[0]).replace('%description%', schools[i].description);
+            educationSection.append(formattedEducationItem);
+          }
+        }
+        if (courses.length > 0) {
+          for (var i in courses) {
+            educationItemUrl       = HTMLeducationItemURL.replace('%url%', courses[i].url).replace('%data%', courses[i].school + '. ' + courses[i].title);
+            formattedEducationItem = HTMLeducationItem.replace('%date%', courses[i].date).replace('%data%', educationItemUrl).replace('%description%', courses[i].description);
+            educationSection.append(formattedEducationItem);
+          }
+        }
 
-				return [formattedEducationItem];
-			} else {
-				educationSection.append(formattedEducationError);
+        return [formattedEducationItem];
+      } else {
+        educationSection.append(formattedEducationError);
 
-				return formattedEducationError;
-			} 
-		}();
-	}
+        return formattedEducationError;
+      } 
+    }();
+  }
 };
 
 var work = {
-	jobs: [
-		{
-			employer: 'Casting Agency',
-			profession: 'Crowd Scenes Actor',
-			location: 'Los-Angeles, CA',
-			dates: 'June, 2010 - August, 2010',
-			description: 'Crowd scenes actor in different tv shows and music videos. ' + 
-			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? ' +
-			'Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. ' +
-			'Accusamus quo error repudiandae blanditiis ducimus inventore a, ' +
-			'fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? ' +
-			'Nemo delectus aliquid assumenda.'
-		},
-		{
-			employer: 'City Hall',
-			profession: 'System Administrator',
-			location: 'Arkhangelsk, Russia',
-			dates: 'November, 2012 - August, 2013',
-			description: 'Administration of local domain network, maintaining local web services and servers. ' + 
-			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? ' +
-			'Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. ' +
-			'Accusamus quo error repudiandae blanditiis ducimus inventore a, ' +
-			'fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? ' +
-			'Nemo delectus aliquid assumenda.'
-		},
-		{
-			employer: 'City Hall',
-			profession: 'System Administrator / Web Developer',
-			location: 'Arkhangelsk, Russia',
-			dates: 'August, 2013 - Present Time',
-			description: 'Administration of local domain network, maintaining local web services and servers. ' + 
-			'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? ' +
-			'Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. ' +
-			'Accusamus quo error repudiandae blanditiis ducimus inventore a, ' +
-			'fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? ' +
-			'Nemo delectus aliquid assumenda.'
-		}
-	],
+  jobs: [
+    {
+      employer: 'Casting Agency',
+      profession: 'Crowd Scenes Actor',
+      location: 'Los-Angeles, CA',
+      dates: 'June, 2010 - August, 2010',
+      description: 'Crowd scenes actor in different tv shows and music videos. ' + 
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? ' +
+      'Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. ' +
+      'Accusamus quo error repudiandae blanditiis ducimus inventore a, ' +
+      'fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? ' +
+      'Nemo delectus aliquid assumenda.'
+    },
+    {
+      employer: 'City Hall',
+      profession: 'System Administrator',
+      location: 'Arkhangelsk, Russia',
+      dates: 'November, 2012 - August, 2013',
+      description: 'Administration of local domain network, maintaining local web services and servers. ' + 
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? ' +
+      'Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. ' +
+      'Accusamus quo error repudiandae blanditiis ducimus inventore a, ' +
+      'fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? ' +
+      'Nemo delectus aliquid assumenda.'
+    },
+    {
+      employer: 'City Hall',
+      profession: 'System Administrator / Web Developer',
+      location: 'Arkhangelsk, Russia',
+      dates: 'August, 2013 - Present Time',
+      description: 'Administration of local domain network, maintaining local web services and servers. ' + 
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? ' +
+      'Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. ' +
+      'Accusamus quo error repudiandae blanditiis ducimus inventore a, ' +
+      'fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? ' +
+      'Nemo delectus aliquid assumenda.'
+    }
+  ],
 
-	display: function() {
-		var formatWork = function() {
-			var jobs 		= work.jobs,
-			workSection = $('#work'),
-			formattedWorkError = '<p>No previous experience.</p>',
-			formattedWorkItem;
+  display: function() {
+    var formatWork = function() {
+      var jobs    = work.jobs,
+      workSection = $('#work'),
+      formattedWorkError = '<p>No previous experience.</p>',
+      formattedWorkItem;
 
-			if (jobs.length > 0) {
-				for (var i in jobs) {
-					formattedWorkItem = HTMLworkItem.replace('%employer%', jobs[i].employer).replace('%dates%', jobs[i].dates).
-																					 replace('%profession%', jobs[i].profession).replace('%description%', jobs[i].description);
+      if (jobs.length > 0) {
+        for (var i in jobs) {
+          formattedWorkItem = HTMLworkItem.replace('%employer%', jobs[i].employer).replace('%dates%', jobs[i].dates).
+                                           replace('%profession%', jobs[i].profession).replace('%description%', jobs[i].description);
 
-					workSection.append(formattedWorkItem);
-				}
+          workSection.append(formattedWorkItem);
+        }
 
-				return [formattedWorkItem];
-			} else {
-				workSection.append(formattedWorkError);
+        return [formattedWorkItem];
+      } else {
+        workSection.append(formattedWorkError);
 
-				return formattedWorkError;
-			}
-		}();
-	}	
+        return formattedWorkError;
+      }
+    }();
+  } 
 };
 
 var portfolio = {
-	projects: [
-		{
-			name: 'Ruby Warrior',
-			date: 'October, 2014',
-			url: '#',
-			title: 'Personal Portfolio',
-			description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, officiis ea. Velit officia nobis aliquam asperiores, ' +
-									 'voluptatem facilis molestiae ea possimus provident voluptatibus deserunt consequatur iure, nostrum alias, minima, sed!',
-			screenshots: [
-				{
-					source: 'images/1.png',
-					alter: 'screenshot'
-				},
-				{
-					source: 'images/2.png',
-					alter: 'screenshot'
-				},
-				{
-					source: 'images/3.png',
-					alter: 'screenshot'
-				}
-			]
-		}
-	],
+  projects: [
+    {
+      name: 'Ruby Warrior',
+      date: 'October, 2014',
+      url: '#',
+      title: 'Personal Portfolio',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, officiis ea. Velit officia nobis aliquam asperiores, ' +
+                   'voluptatem facilis molestiae ea possimus provident voluptatibus deserunt consequatur iure, nostrum alias, minima, sed!',
+      screenshots: [
+        {
+          source: 'images/1.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/2.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/3.png',
+          alter: 'screenshot'
+        }
+      ]
+    },
+    {
+      name: 'Ruby Warrior 2',
+      date: 'November, 2014',
+      url: '#',
+      title: 'Improved Personal Portfolio',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, officiis ea. Velit officia nobis aliquam asperiores, ' +
+                   'voluptatem facilis molestiae ea possimus provident voluptatibus deserunt consequatur iure, nostrum alias, minima, sed!',
+      screenshots: [
+        {
+          source: 'http://placehold.it/1280x720/F0563D',
+          alter: 'screenshot'
+        },
+        {
+          source: 'http://placehold.it/1280x720/A75265',
+          alter: 'screenshot'
+        },
+        {
+          source: 'http://placehold.it/1280x720/E8117F',
+          alter: 'screenshot'
+        }
+      ]
+    }
+  ],
 
-	display: function() {
-		var formatPortfolio = function() {
-			var projects 					= portfolio.projects,
-			porfolioSection 			= $('#portfolio'),
-			formattedProjectError = '<p>There are no finished projects yet.</p>',
-			formattedProjectItem,
-			formattedProjectImage;
+  display: function() {
+    var formatPortfolio = function() {
+      var projects          = portfolio.projects,
+      porfolioSection       = $('#portfolio'),
+      modalSection          = $('body'),
+      formattedProjectError = '<p>There are no finished projects yet.</p>',
+      formattedProjectItem,
+      formattedProjectImage,
+      formattedModalHeader,
+      formattedModalItem;
 
-			if (projects.length > 0) {
-				for (var i in projects) {
-					porfolioSection.append(HTMLprojectHeader);
+      var imgIndex = 0;
 
-					var image, project 	 = projects[i],
-					formattedProjectItem = HTMLprojectItem.replace('%url%', project.url).replace('%name%', project.name).replace('%date%', project.date).
-																 replace('%title%', project.title).replace('%description%', project.description);
+      if (projects.length > 0) {
+        for (var i in projects) {
+          porfolioSection.append(HTMLprojectHeader);
 
-					$('.project:last').append(formattedProjectItem);
+          var image, project   = projects[i],
+          formattedProjectItem = HTMLprojectItem.replace('%url%', project.url).replace('%name%', project.name).replace('%date%', project.date).
+                                 replace('%title%', project.title).replace('%description%', project.description),
+          formattedModalHeader = HTMLmodalHeader.replace('%index%', i).replace('%project%', project.name).replace('%carousel%', i).replace('%left%', i).replace('%right%', i);
 
-					if (project.screenshots.length > 0) {
-						for (var j in project.screenshots) {
-							image = project.screenshots[j];
+          $('.project:last').append(formattedProjectItem);
+          modalSection.append(formattedModalHeader);
 
-							formattedProjectImage = HTMLprojectImage.replace('%source%', image.source).replace('%alter%', image.alter);
-							$('.screenshots:last').append(formattedProjectImage);
-						}
-					}
-				}
+          if (project.screenshots.length > 0) {
+            for (var j in project.screenshots) {
+              image = project.screenshots[j];
 
-				return [formattedProjectItem];
-			} else {
-				porfolioSection.append(formattedWorkError);
+              formattedProjectImage = HTMLprojectImage.replace('%index%', imgIndex).replace('%number%', i).replace('%source%', image.source).replace('%alter%', image.alter);
+              $('.screenshots:last').append(formattedProjectImage);
 
-				return formattedWorkError;
-			}
-		}();
-	}
+              imgIndex += 1;
+
+              formattedModalItem = HTMLmodalItem.replace('%source%', image.source).replace('%alter%', image.alter);
+              $('.carousel-inner:last').append(formattedModalItem);
+            }
+          }
+        }
+
+        return [formattedProjectItem];
+      } else {
+        porfolioSection.append(formattedWorkError);
+
+        return formattedWorkError;
+      }
+    }();
+  }
 };
 
 var map = {
-	initialize: function() {
+  initialize: function() {
 
-		var map, locations, 
-		mapOptions = {
-			disableDefaultUI: true
-		};
+    var map, locations, 
+    mapOptions = {
+      disableDefaultUI: true
+    };
 
-		map = new google.maps.Map(document.querySelector('#map'), mapOptions);
+    map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
-		locationFinder = function() {
-			var locations = [];
-			locations.push(bio.contacts.location);
+    locationFinder = function() {
+      var locations = [];
+      locations.push(bio.contacts.location);
 
-			for (var i in education.schools) {
-				locations.push(education.schools[i].location);
-			}
+      for (var i in education.schools) {
+        locations.push(education.schools[i].location);
+      }
 
-			for (var i in work.jobs) {
-				locations.push(work.jobs[i].location);
-			}
+      for (var i in work.jobs) {
+        locations.push(work.jobs[i].location);
+      }
 
-			return locations;
-		};
+      return locations;
+    };
 
-		createMapMarker = function(placeData) {
-			// The next lines save location data from the search result object to local variables
-	    var lat 	 = placeData.geometry.location.k,  // latitude from the place service
-	    		lon 	 = placeData.geometry.location.B,  // longitude from the place service
-	    	 	name 	 = placeData.formatted_address,  	 // name of the place from the place service
-	    		bounds = window.mapBounds;            	 // current boundaries of the map window
+    createMapMarker = function(placeData) {
+      // The next lines save location data from the search result object to local variables
+      var lat    = placeData.geometry.location.k,  // latitude from the place service
+          lon    = placeData.geometry.location.B,  // longitude from the place service
+          name   = placeData.formatted_address,    // name of the place from the place service
+          bounds = window.mapBounds;               // current boundaries of the map window
 
-	    // marker is an object with additional data about the pin for a single location
-	    var marker = new google.maps.Marker({
-	      map: map,
-	      position: placeData.geometry.location,
-	      title: name
-	    });
-	    
-	    // infoWindows are the little helper windows that open when you click
-	    // or hover over a pin on a map. They usually contain more information
-	    // about a location.
-	    var infoWindow = new google.maps.InfoWindow({
-	      content: name
-	    });
+      // marker is an object with additional data about the pin for a single location
+      var marker = new google.maps.Marker({
+        map: map,
+        position: placeData.geometry.location,
+        title: name
+      });
+      
+      // infoWindows are the little helper windows that open when you click
+      // or hover over a pin on a map. They usually contain more information
+      // about a location.
+      var infoWindow = new google.maps.InfoWindow({
+        content: name
+      });
 
-	    google.maps.event.addListener(marker, 'click', function() {
-	      infoWindow.open(map, marker);
-	    });
+      google.maps.event.addListener(marker, 'click', function() {
+        infoWindow.open(map, marker);
+      });
 
-	    // this is where the pin actually gets added to the map.
-	    // bounds.extend() takes in a map location object
-	    bounds.extend(new google.maps.LatLng(lat, lon));
-	    // fit the map to the new marker
-	    map.fitBounds(bounds);
-	    // center the map
-	    map.setCenter(bounds.getCenter());
-		};
+      // this is where the pin actually gets added to the map.
+      // bounds.extend() takes in a map location object
+      bounds.extend(new google.maps.LatLng(lat, lon));
+      // fit the map to the new marker
+      map.fitBounds(bounds);
+      // center the map
+      map.setCenter(bounds.getCenter());
+    };
 
-		callback = function(results, status) {
-	    if (status == google.maps.places.PlacesServiceStatus.OK) {
-	      createMapMarker(results[0])
-	    }
-	  };
+    callback = function(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        createMapMarker(results[0])
+      }
+    };
 
-	  pinPoster = function(locations) {
+    pinPoster = function(locations) {
 
-	    // creates a Google place search service object. PlacesService does the work of
-	    // actually searching for location data.
-	    var service = new google.maps.places.PlacesService(map);
-	    
-	    // Iterates through the array of locations, creates a search object for each location
-	    for (place in locations) {
+      // creates a Google place search service object. PlacesService does the work of
+      // actually searching for location data.
+      var service = new google.maps.places.PlacesService(map);
+      
+      // Iterates through the array of locations, creates a search object for each location
+      for (place in locations) {
 
-	      // the search request object
-	      var request = {
-	        query: locations[place]
-	      }
+        // the search request object
+        var request = {
+          query: locations[place]
+        }
 
-	      // Actually searches the Google Maps API for location data and runs the callback 
-	      // function with the search results after each search.
-	      service.textSearch(request, callback);
-	    }
-	  };
+        // Actually searches the Google Maps API for location data and runs the callback 
+        // function with the search results after each search.
+        service.textSearch(request, callback);
+      }
+    };
 
-	  window.mapBounds = new google.maps.LatLngBounds();
-	  locations = locationFinder();
+    window.mapBounds = new google.maps.LatLngBounds();
+    locations = locationFinder();
     pinPoster(locations);
-	},
+    window.addEventListener('resize', function(e) {
+      // Make sure the map bounds get updated on page resize
+      map.fitBounds(mapBounds);
+    });
+  },
 
-	display: function() {
-		window.addEventListener('load', map.initialize);
-		window.addEventListener('resize', function(e) {
-  	// Make sure the map bounds get updated on page resize
-		map.fitBounds(mapBounds);
-		});
-		$('#mapDiv').append(HTMLgoogleMap);
-	} 
+  display: function() {
+    window.addEventListener('load', map.initialize);
+    
+    $('#mapDiv').append(HTMLgoogleMap);
+  } 
 };
 
 bio.display();
