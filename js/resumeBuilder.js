@@ -493,6 +493,14 @@ var map = {
       // Make sure the map bounds get updated on page resize
       map.fitBounds(mapBounds);
     });
+
+    var minZoomLevel = 1;
+    google.maps.event.addListener(map, 'zoom_changed', function () {
+      if (map.getZoom() < minZoomLevel) {
+        // Limit zoom level
+        map.setZoom(minZoomLevel);
+      }
+    });
   },
 
   display: function() {
