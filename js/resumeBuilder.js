@@ -93,7 +93,7 @@ var bio = {
       formattedSkillError = '<p>There are no interesting skills.</p>',
       formattedSkillItem;
 
-      if (skills.length > 0) {
+      if (skills && skills.length > 0) {
         for (var i in skills) {
           formattedSkillItem = HTMLskillItem.replace('%data%', skills[i][0]).replace('%value%', skills[i][1]).
                                              replace('%style%', (458 * skills[i][1]).toFixed(1));
@@ -105,6 +105,7 @@ var bio = {
         return formattedSkillItem;
       } else {
         skillSection.append(formattedSkillError);
+        $('#skills').hide();
 
         return formattedSkillError;
       }
@@ -118,7 +119,7 @@ var bio = {
       formattedLanguageItem,
       formattedLanguageRating;
 
-      if (languages.length > 0) {
+      if (languages && languages.length > 0) {
         for (var i in languages) {
           formattedLanguageItem   = HTMLlanguageItem.replace('%data%', languages[i][0]);
           formattedLanguageRating = HTMLlanguageRating.replace('%value%', languages[i][1]).replace('%rating%', languages[i][1]);
@@ -130,6 +131,7 @@ var bio = {
         return [formattedLanguageItem, formattedLanguageRating];
       } else {
         languageSection.append(formattedLanguageError);
+        $('#languages').hide();
 
         return formattedLanguageError;
       }
@@ -140,7 +142,7 @@ var bio = {
       formattedHobbyError = '<p>There are no hobbies at all.</p>',
       formattedHobbyItem;
 
-      if (hobbies.length > 0) {
+      if (hobbies && hobbies.length > 0) {
         for (var i in hobbies) {
           formattedHobbyItem = HTMLhobbyItem.replace('%data%', hobbies[i]);
 
@@ -149,6 +151,7 @@ var bio = {
         return [formattedHobbyItem];
       } else {
         hobbySection.append(formattedHobbyError);
+        hobbySection.hide();
 
         return formattedHobbyError;
       }
@@ -203,18 +206,18 @@ var education = {
       formattedEducationItem,
       educationItemUrl;
 
-      if (schools.length > 0 || courses.length > 0) {
+      if ((schools && schools.length > 0) || (courses && courses.length > 0)) {
          educationSection.append(HTMLeducationHeader);
          educationSection = $('#education-list');
 
-        if (schools.length > 0) {
+        if (schools && schools.length > 0) {
           for (var i in schools) {
             formattedEducationItem = HTMLeducationItem.replace('%date%', schools[i].date).replace('%data%', schools[i].school + 
                                      '. ' + schools[i].majors[0]).replace('%description%', schools[i].description);
             educationSection.append(formattedEducationItem);
           }
         }
-        if (courses.length > 0) {
+        if (courses && courses.length > 0) {
           for (var i in courses) {
             educationItemUrl       = HTMLeducationItemURL.replace('%url%', courses[i].url).replace('%data%', courses[i].school + '. ' + courses[i].title);
             formattedEducationItem = HTMLeducationItem.replace('%date%', courses[i].date).replace('%data%', educationItemUrl).replace('%description%', courses[i].description);
@@ -225,6 +228,7 @@ var education = {
         return [formattedEducationItem];
       } else {
         educationSection.append(formattedEducationError);
+        educationSection.hide();
 
         return formattedEducationError;
       } 
@@ -279,7 +283,7 @@ var work = {
       formattedWorkError = '<p>No previous experience.</p>',
       formattedWorkItem;
 
-      if (jobs.length > 0) {
+      if (jobs && jobs.length > 0) {
         for (var i in jobs) {
           formattedWorkItem = HTMLworkItem.replace('%employer%', jobs[i].employer).replace('%dates%', jobs[i].dates).
                                            replace('%profession%', jobs[i].profession).replace('%description%', jobs[i].description);
@@ -290,6 +294,7 @@ var work = {
         return [formattedWorkItem];
       } else {
         workSection.append(formattedWorkError);
+        workSection.hide();
 
         return formattedWorkError;
       }
@@ -348,7 +353,7 @@ var portfolio = {
   display: function() {
     var formatPortfolio = function() {
       var projects          = portfolio.projects,
-      porfolioSection       = $('#portfolio'),
+      portfolioSection      = $('#portfolio'),
       modalSection          = $('body'),
       formattedProjectError = '<p>There are no finished projects yet.</p>',
       formattedProjectItem,
@@ -358,9 +363,9 @@ var portfolio = {
 
       var imgIndex = 0;
 
-      if (projects.length > 0) {
+      if (projects && projects.length > 0) {
         for (var i in projects) {
-          porfolioSection.append(HTMLprojectHeader);
+          portfolioSection.append(HTMLprojectHeader);
 
           var image, project   = projects[i],
           formattedProjectItem = HTMLprojectItem.replace('%url%', project.url).replace('%name%', project.name).replace('%date%', project.date).
@@ -387,9 +392,10 @@ var portfolio = {
 
         return [formattedProjectItem];
       } else {
-        porfolioSection.append(formattedWorkError);
+        portfolioSection.append(formattedProjectError);
+        portfolioSection.hide();
 
-        return formattedWorkError;
+        return formattedProjectError;
       }
     }();
   }
