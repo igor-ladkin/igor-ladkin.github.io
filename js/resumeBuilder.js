@@ -65,7 +65,7 @@ var bio = {
       formattedContactTitle,
       formattedContactDescription;
 
-      if (Object.keys(contacts).length > 0) {
+      if (contacts && Object.keys(contacts).length > 0) {
         for (var key in contacts) {
           contactSection.append(HTMLcontactItem);
 
@@ -80,6 +80,7 @@ var bio = {
         return [formattedContactIcon, formattedContactTitle, formattedContactDescription];
       } else {
         contactSection.append(formattedContactError);
+        contactSection.hide();
 
         return formattedContactError;
       }
