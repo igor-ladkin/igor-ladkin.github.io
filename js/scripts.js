@@ -32,3 +32,7 @@ $('.thumbnail').on('click', function() {
     }
   });
 });
+
+$(document).click(function(loc) {
+  console.log(loc.pageX, loc.pageY);
+});
