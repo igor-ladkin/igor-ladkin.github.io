@@ -17,7 +17,7 @@ var bio = {
            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus amet doloremque ex voluptates ut laudantium esse, nam ipsa. ' +
            'Dolor magnam quam voluptate, minima maxime. Blanditiis sint magni, praesentium, facere iste totam maiores natus, adipisci, nobis ' +
            'culpa temporibus alias voluptatum repellendus voluptas! Quibusdam veniam, consequuntur reiciendis nihil quo iusto ipsum inventore.',
-  skills: [['Ruby on Rails', 0.8], ['JavaScript', 0.65], ['HTML and CSS', 0.55], ['Board Riding', 0.4]],
+  skills: [['Ruby on Rails', 0.7], ['JavaScript and jQuery', 0.63], ['HTML and CSS', 0.5], ['Node.js', 0.3]],
   languages: [['Russian', 100], ['English', 80]],
   hobbies :['Travelling', 'Crossfit', 'Surfing', 'Snowboarding'],
 
@@ -430,7 +430,7 @@ var map = {
     createMapMarker = function(placeData) {
       // The next lines save location data from the search result object to local variables
       var lat    = placeData.geometry.location.k,  // latitude from the place service
-          lon    = placeData.geometry.location.B,  // longitude from the place service
+          lon    = placeData.geometry.location.D,  // longitude from the place service
           name   = placeData.formatted_address,    // name of the place from the place service
           bounds = window.mapBounds;               // current boundaries of the map window
 
