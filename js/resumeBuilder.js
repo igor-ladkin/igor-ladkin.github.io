@@ -11,13 +11,24 @@ var bio = {
     location: 'Arkhangelsk, Russia'
   },
   avatar: 'images/avatar.png',
-  aboutMe: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur fuga ut voluptates inventore similique veniam, iste sint! ' +
-           'Aspernatur harum possimus dolore deleniti fuga fugit amet quidem dolores eum quos libero consequatur quaerat, eaque nesciunt ' +
-           'exercitationem eveniet, velit ea doloribus autem ipsum nisi delectus explicabo quas! Reiciendis itaque suscipit, ea reprehenderit.' +
-           'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus amet doloremque ex voluptates ut laudantium esse, nam ipsa. ' +
-           'Dolor magnam quam voluptate, minima maxime. Blanditiis sint magni, praesentium, facere iste totam maiores natus, adipisci, nobis ' +
-           'culpa temporibus alias voluptatum repellendus voluptas! Quibusdam veniam, consequuntur reiciendis nihil quo iusto ipsum inventore.',
-  skills: [['Ruby on Rails', 0.7], ['JavaScript and jQuery', 0.63], ['HTML and CSS', 0.5], ['Node.js', 0.3]],
+  aboutMe: '<p>Cruel world of web developing I found for myself no so long ago. Of course as a student majoring ' +
+           'in applied mathematics I’ve tried a lot of programming on different languages. But during those ' +
+           'days desire to solve actual problems exceeded needs of learning new interesting technologies. ' +
+           'And that’s how I stuck with C++ for a long time. My way to web development was not ' +
+           'straightforward. I knew some basics like HTML, CSS and a little bit of PHP, but I had no clue why ' +
+           'and how web server works and that there is another brighter way with expressive programming ' +
+           'language. And then I found Ruby. After that every rubyist knows that there is no way back.</p>' +
+           '<p>Right now my fields of interest are tightly coupled with Rails and it’s ecosystem. But even thought ' +
+           'Rails is my go to framework I always try to expand my range of knowledge. That’s why I you are ' +
+           'interested in Node, Ember or any other modern framework or technology we can find a topic to discuss.</p>' +
+           '<p>Besides programming I have more than ordinary hobbies. Like all of us I like to watch a good ' +
+           'movie, but lately prefer a good book. Sport was in my life since early ages and some exercises are ' +
+           'good for your health so when I can I train. Another my interest is traveling. I really enjoy visiting ' +
+           'new places and meeting different people. During my last trip to Bali I found something special. This ' +
+           'thing excites me so much that it’s hard to describe. The name of this thing is surfing, but that’s a ' +
+           'completely different story.',
+           
+  skills: [['Ruby on Rails', 0.7], ['JavaScript and jQuery', 0.63], ['HTML and CSS', 0.5], ['Node.js', 0.15]],
   languages: [['Russian', 100], ['English', 80]],
   hobbies :['Travelling', 'Crossfit', 'Surfing', 'Snowboarding'],
 
@@ -167,7 +178,7 @@ var education = {
       location: 'Arkhangelsk, Russia',
       majors: ['Applied Mathematics'],
       degree: 'Specialist',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
+      description: "Graduate paper: 'Discrete images determination on the basis of algebraical information theory'"
     },
     {
       school: 'Centre for Development of Advanced Computing',
@@ -175,7 +186,7 @@ var education = {
       location: 'Delhi, India',
       majors: ['Web Development with .NET'],
       degree: 'Certificate',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
+      description: 'Training program for civil servants in association with government of India'
     }
   ],
   onlineCourses: [
@@ -185,7 +196,8 @@ var education = {
       date: '2014',
       location: 'Berkeley, CA, USA',
       url: 'https://s3.amazonaws.com/verify.edx.org/downloads/6ed98ac9c1ac40d3be71aed4dafda704/Certificate.pdf',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
+      description: 'Online course from BerkeleyX teaches the fundamentals of software engineering using Agile ' +
+                   'techniques to develop Software as a Service using Ruby on Rails'
     },
     {
       title: 'CS169.2x Engineering Software as a Service, Part 2',
@@ -193,7 +205,16 @@ var education = {
       date: '2014',
       location: 'Berkeley, CA, USA',
       url: 'https://s3.amazonaws.com/verify.edx.org/downloads/3fcdb6b46fb84ab69c5b8d74a057e72f/Certificate.pdf',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, labore.'
+      description: 'Second part of online course from BerkeleyX teaches sophisticated SaaS+Agile skills, such as working with legacy code'
+    },
+    {
+      title: 'Professional Wed Development with Ruby on Rails',
+      school: 'Thinknetica',
+      date: '2015',
+      location: 'Moscow, Russia',
+      url: '#',
+      description: 'Training program from online school Thinknetica covers wide range of topics starting from authentication, file upload and ' +
+                   'goes through background jobs, full-text search, zero-time deploy and high load'
     }
   ],
 
