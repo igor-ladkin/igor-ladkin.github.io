@@ -11,7 +11,7 @@ var bio = {
     location: 'Arkhangelsk, Russia'
   },
   avatar: 'images/avatar.png',
-  aboutMe: '<p>Cruel world of web developing I found for myself no so long ago. Of course as a student majoring ' +
+  aboutMe: '<p>Cruel world of web developing I found for myself not so long ago. Of course as a student majoring ' +
            'in applied mathematics I’ve tried a lot of programming on different languages. But during those ' +
            'days desire to solve actual problems exceeded needs of learning new interesting technologies. ' +
            'And that’s how I stuck with C++ for a long time. My way to web development was not ' +
@@ -21,9 +21,9 @@ var bio = {
            '<p>Right now my fields of interest are tightly coupled with Rails and its ecosystem. But even thought ' +
            'Rails is my go to framework I always try to expand my range of knowledge. That’s why I you are ' +
            'interested in Node, Ember or any other modern framework or technology we can find a topic to discuss.</p>' +
-           '<p>Besides programming I have more than ordinary hobbies. Like all of us I like to watch a good ' +
+           '<p>Besides programming I have more than ordinary hobbies. Like all of us I enjoy watching a good ' +
            'movie, but lately prefer a good book. Sport was in my life since early ages and some exercises are ' +
-           'good for your health so when I can I train. Another my interest is traveling. I really enjoy visiting ' +
+           'good for your health so when I can I train. Another my interest is traveling. I really take pleasure in visiting ' +
            'new places and meeting different people. During my last trip to Bali I found something special. This ' +
            'thing excites me so much that it’s hard to describe. The name of this thing is surfing, but that’s a ' +
            'completely different story.',
@@ -264,40 +264,21 @@ var education = {
 var work = {
   jobs: [
     {
-      employer: 'Casting Agency',
-      profession: 'Crowd Scenes Actor',
-      location: 'Los-Angeles, CA',
-      dates: 'June, 2010 - August, 2010',
-      description: 'Crowd scenes actor in different tv shows and music videos. ' + 
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? ' +
-      'Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. ' +
-      'Accusamus quo error repudiandae blanditiis ducimus inventore a, ' +
-      'fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? ' +
-      'Nemo delectus aliquid assumenda.'
+      employer: 'City Hall',
+      profession: 'System Administrator / Web Developer',
+      location: 'Arkhangelsk, Russia',
+      dates: 'August, 2013 - Present Time',
+      description: 'Main field of focus is internal application of document workflow. Implementation of new ' + 
+      'functionality, testing usability and integration with other services. Minor tasks are creating ' +
+      'application for realtime status check of all active network devices, server maintenance.'
     },
     {
       employer: 'City Hall',
       profession: 'System Administrator',
       location: 'Arkhangelsk, Russia',
       dates: 'November, 2012 - August, 2013',
-      description: 'Administration of local domain network, maintaining local web services and servers. ' + 
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? ' +
-      'Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. ' +
-      'Accusamus quo error repudiandae blanditiis ducimus inventore a, ' +
-      'fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? ' +
-      'Nemo delectus aliquid assumenda.'
-    },
-    {
-      employer: 'City Hall',
-      profession: 'System Administrator / Web Developer',
-      location: 'Arkhangelsk, Russia',
-      dates: 'August, 2013 - Present Time',
-      description: 'Administration of local domain network, maintaining local web services and servers. ' + 
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias expedita ad voluptate suscipit nostrum? ' +
-      'Eum recusandae praesentium, beatae accusamus repudiandae corporis qui autem adipisci nobis. ' +
-      'Accusamus quo error repudiandae blanditiis ducimus inventore a, ' +
-      'fugit cupiditate doloribus odio similique sequi deserunt, magnam explicabo quam illo quidem est? ' +
-      'Nemo delectus aliquid assumenda.'
+      description: 'User and recourse management via Microsoft administrative tools for local network. Routing ' + 
+      'organization between separate VLANs. Testing local services and fixing bugs.'
     }
   ],
 
