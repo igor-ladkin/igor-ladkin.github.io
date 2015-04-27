@@ -14,10 +14,10 @@ var HTMLheaderPhoto        = "<div id='photo'><img src='%data%' alt='photo'></di
     HTMLlanguageRating     = "<div class='icons pull-right'><div class='icons-red' data-percent='%value%' style='width: %rating%%; height: 14px;'></div></div>",
     HTMLhobbyItem          = "<div class='hobby'>%data%</div>";
 
-var HTMLeducationHeader  = "<ul id='education-list' class='clearfix'></ul>",
-    HTMLeducationItem    = "<li><div class='year pull-left'>%date%</div><div class='description pull-right'><h3>%data%</h3>" +
-                          "<p>%description%</p></div></li>",
-    HTMLeducationItemURL = "<a href='%url%'>%data%</a>";
+var HTMLeducationHeader     = "<ul id='education-list' class='clearfix'></ul>",
+    HTMLeducationItem       = "<li><div class='year pull-left'>%date%</div><div class='description pull-right'><h3>%data%</h3>" +
+                              "<p>%description%</p></div></li>",
+    HTMLeducationItemURL    = "<a href='%url%'>%data%</a>";
 
 var HTMLworkItem = "<div class='job clearfix'><div class='col-xs-3'><div class='where'>%employer%</div><div class='year'>%dates%</div></div>" +
                    "<div class='col-xs-9'><div class='profession'>%profession%</div><div class='description'>%description%</div></div></div>";

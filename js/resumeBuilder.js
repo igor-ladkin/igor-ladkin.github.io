@@ -18,7 +18,7 @@ var bio = {
            'straightforward. I knew some basics like HTML, CSS and a little bit of PHP, but I had no clue why ' +
            'and how web server works and that there is another brighter way with expressive programming ' +
            'language. And then I found Ruby. After that every rubyist knows that there is no way back.</p>' +
-           '<p>Right now my fields of interest are tightly coupled with Rails and it’s ecosystem. But even thought ' +
+           '<p>Right now my fields of interest are tightly coupled with Rails and its ecosystem. But even thought ' +
            'Rails is my go to framework I always try to expand my range of knowledge. That’s why I you are ' +
            'interested in Node, Ember or any other modern framework or technology we can find a topic to discuss.</p>' +
            '<p>Besides programming I have more than ordinary hobbies. Like all of us I like to watch a good ' +
@@ -28,7 +28,7 @@ var bio = {
            'thing excites me so much that it’s hard to describe. The name of this thing is surfing, but that’s a ' +
            'completely different story.',
            
-  skills: [['Ruby on Rails', 0.7], ['JavaScript and jQuery', 0.63], ['HTML and CSS', 0.5], ['Node.js', 0.15]],
+  skills: [['Ruby on Rails', 0.7], ['JavaScript and jQuery', 0.63], ['HTML and CSS', 0.5], ['Node and Express', 0.30], ['Ember.js', 0.17]],
   languages: [['Russian', 100], ['English', 80]],
   hobbies :['Travelling', 'Crossfit', 'Surfing', 'Snowboarding'],
 
@@ -178,7 +178,7 @@ var education = {
       location: 'Arkhangelsk, Russia',
       majors: ['Applied Mathematics'],
       degree: 'Specialist',
-      description: "Graduate paper: 'Discrete images determination on the basis of algebraical information theory'"
+      description: "Graduate paper: 'Discrete images determination on the basis of algebraical information theory'."
     },
     {
       school: 'Centre for Development of Advanced Computing',
@@ -186,7 +186,7 @@ var education = {
       location: 'Delhi, India',
       majors: ['Web Development with .NET'],
       degree: 'Certificate',
-      description: 'Training program for civil servants in association with government of India'
+      description: 'Training program for civil servants in association with government of India.'
     }
   ],
   onlineCourses: [
@@ -197,7 +197,7 @@ var education = {
       location: 'Berkeley, CA, USA',
       url: 'https://s3.amazonaws.com/verify.edx.org/downloads/6ed98ac9c1ac40d3be71aed4dafda704/Certificate.pdf',
       description: 'Online course from BerkeleyX teaches the fundamentals of software engineering using Agile ' +
-                   'techniques to develop Software as a Service using Ruby on Rails'
+                   'techniques to develop Software as a Service using Ruby on Rails.'
     },
     {
       title: 'CS169.2x Engineering Software as a Service, Part 2',
@@ -205,7 +205,7 @@ var education = {
       date: '2014',
       location: 'Berkeley, CA, USA',
       url: 'https://s3.amazonaws.com/verify.edx.org/downloads/3fcdb6b46fb84ab69c5b8d74a057e72f/Certificate.pdf',
-      description: 'Second part of online course from BerkeleyX teaches sophisticated SaaS+Agile skills, such as working with legacy code'
+      description: 'Second part of online course from BerkeleyX teaches sophisticated SaaS+Agile skills, such as working with legacy code.'
     },
     {
       title: 'Professional Wed Development with Ruby on Rails',
@@ -214,7 +214,7 @@ var education = {
       location: 'Moscow, Russia',
       url: '#',
       description: 'Training program from online school Thinknetica covers wide range of topics starting from authentication, file upload and ' +
-                   'goes through background jobs, full-text search, zero-time deploy and high load'
+                   'goes through background jobs, full-text search, zero-time deploy and high load.'
     }
   ],
 
@@ -240,8 +240,12 @@ var education = {
         }
         if (courses && courses.length > 0) {
           for (var i in courses) {
-            educationItemUrl       = HTMLeducationItemURL.replace('%url%', courses[i].url).replace('%data%', courses[i].school + '. ' + courses[i].title);
-            formattedEducationItem = HTMLeducationItem.replace('%date%', courses[i].date).replace('%data%', educationItemUrl).replace('%description%', courses[i].description);
+            if (courses[i].url != '#') {
+              educationItemUrl       = HTMLeducationItemURL.replace('%url%', courses[i].url).replace('%data%', courses[i].school + '. ' + courses[i].title);
+              formattedEducationItem = HTMLeducationItem.replace('%data%', educationItemUrl).replace('%date%', courses[i].date).replace('%description%', courses[i].description);
+            } else {
+              formattedEducationItem = HTMLeducationItem.replace('%data%', courses[i].school + '. ' + courses[i].title).replace('%date%', courses[i].date).replace('%description%', courses[i].description);
+            }
             educationSection.append(formattedEducationItem);
           }
         }
