@@ -214,7 +214,7 @@ var education = {
       location: 'Moscow, Russia',
       url: '#',
       description: 'Training program from online school Thinknetica covers wide range of topics starting from authentication, file upload and ' +
-                   'goes through background jobs, full-text search, zero-time deploy and high load.'
+                   'goes through background jobs, full-text search, zero-downtime deploy and high load.'
     }
   ],
 
@@ -311,12 +311,100 @@ var work = {
 var portfolio = {
   projects: [
     {
+      name: 'nControl',
+      date: 'August, 2013 - Present Time',
+      url: '#',
+      title: 'CRM application',
+      description: 'Internal application for organization document workflow and management network recourses.',
+      screenshots : [
+        {
+          source: 'images/ncontrol-1.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/ncontrol-2.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/ncontrol-3.png',
+          alter: 'screenshot'
+        }
+      ]
+    },
+    {
+      name: 'Solve Simple',
+      date: 'December, 2014 - March, 2015',
+      url: 'https://github.com/thrasherDGK/SolveSimple',
+      title: 'Ask community for help',
+      description: 'QnA application built from scratch during training course from online school Thinknetica. ' +
+                   "In this project I've used a bunch of technologies like Faye, Sphinx and Sidekiq for the first time." +
+                   'This project helped me a lot in undestanding Rails better in such aspects as zero-downtime deployment, ' +
+                   'organization of pub/sub service, remote deploy and monitoring.',
+      screenshots : [
+        {
+          source: 'images/SolveSimple-1.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/SolveSimple-2.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/SolveSimple-3.png',
+          alter: 'screenshot'
+        }
+      ]
+    },
+    {
+      name: 'Building Blocks of Express.js',
+      date: 'April, 2015',
+      url: '#',
+      title: 'Ember application for QnA API on Express',
+      description: 'My first Ember application built with Ember-CLI. Simple QnA application without any fancy features ' +
+                   'but it works. Looking forward to dig deep into Ember.',
+      screenshots : [
+        {
+          source: 'images/EmberSolve-1.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/EmberSolve-2.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/EmberSolve-3.png',
+          alter: 'screenshot'
+        }
+      ]
+    },
+    {
+      name: 'Building Blocks of Express.js',
+      date: 'March, 2015',
+      url: 'https://protected-earth-2357.herokuapp.com',
+      title: 'Simple web API with Express.js',
+      description: 'Web API based on the course with the same name from Code School. This project helped me consolidate knowledge of Express basics ' +
+                   'plus it was a first time when I tried redis as main database.',
+      screenshots : [
+        {
+          source: 'images/express-1.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/express-2.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/express-3.png',
+          alter: 'screenshot'
+        }
+      ]
+    },
+    {
       name: 'Ruby Warrior',
       date: 'October, 2014',
       url: '#',
       title: 'Personal Portfolio',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, officiis ea. Velit officia nobis aliquam asperiores, ' +
-                   'voluptatem facilis molestiae ea possimus provident voluptatibus deserunt consequatur iure, nostrum alias, minima, sed!',
+      description: 'One of the first project for Udacity frontend nano-degree.',
       screenshots: [
         {
           source: 'images/1.png',
@@ -328,28 +416,6 @@ var portfolio = {
         },
         {
           source: 'images/3.png',
-          alter: 'screenshot'
-        }
-      ]
-    },
-    {
-      name: 'Ruby Warrior 2',
-      date: 'November, 2014',
-      url: '#',
-      title: 'Improved Personal Portfolio',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, officiis ea. Velit officia nobis aliquam asperiores, ' +
-                   'voluptatem facilis molestiae ea possimus provident voluptatibus deserunt consequatur iure, nostrum alias, minima, sed!',
-      screenshots: [
-        {
-          source: 'http://placehold.it/1280x720/F0563D',
-          alter: 'screenshot'
-        },
-        {
-          source: 'http://placehold.it/1280x720/A75265',
-          alter: 'screenshot'
-        },
-        {
-          source: 'http://placehold.it/1280x720/E8117F',
           alter: 'screenshot'
         }
       ]
