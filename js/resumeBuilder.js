@@ -5,7 +5,7 @@ var bio = {
   birthDate: 'Nov 24, 1988',
   contacts: {
     mobile: '8-911-557-5678',
-    email: 'dgkplan@googlemail.com',
+    email: '<a href="mailto:dgkplan@googlemail.com">dgkplan@googlemail.com</a>',
     skype: 'thrasherDGK',
     github: 'thrasherDGK',
     location: 'Arkhangelsk, Russia'
@@ -242,10 +242,11 @@ var education = {
           for (var i in courses) {
             if (courses[i].url != '#') {
               educationItemUrl       = HTMLeducationItemURL.replace('%url%', courses[i].url).replace('%data%', courses[i].school + '. ' + courses[i].title);
-              formattedEducationItem = HTMLeducationItem.replace('%data%', educationItemUrl).replace('%date%', courses[i].date).replace('%description%', courses[i].description);
+              formattedEducationItem = HTMLeducationItem.replace('%data%', educationItemUrl);
             } else {
-              formattedEducationItem = HTMLeducationItem.replace('%data%', courses[i].school + '. ' + courses[i].title).replace('%date%', courses[i].date).replace('%description%', courses[i].description);
+              formattedEducationItem = HTMLeducationItem.replace('%data%', courses[i].school + '. ' + courses[i].title);
             }
+            formattedEducationItem = formattedEducationItem.replace('%date%', courses[i].date).replace('%description%', courses[i].description);
             educationSection.append(formattedEducationItem);
           }
         }
@@ -269,8 +270,8 @@ var work = {
       location: 'Arkhangelsk, Russia',
       dates: 'August, 2013 - Present Time',
       description: 'Main field of focus is internal application of document workflow. Implementation of new ' + 
-      'functionality, testing usability and integration with other services. Minor tasks are creating ' +
-      'application for realtime status check of all active network devices, server maintenance.'
+                   'functionality, testing usability and integration with other services. Minor tasks are creating ' +
+                   'application for realtime status check of all active network devices, server maintenance.'
     },
     {
       employer: 'City Hall',
@@ -279,7 +280,15 @@ var work = {
       dates: 'November, 2012 - August, 2013',
       description: 'User and recourse management via Microsoft administrative tools for local network. Routing ' + 
       'organization between separate VLANs. Testing local services and fixing bugs.'
-    }
+    },
+    {
+      employer: 'Casting Agency',
+      profession: 'Crowd Scenes Actor',
+      location: 'Los-Angeles, CA',
+      dates: 'June, 2010 - August, 2010',
+      description: 'Crowd scenes actor in different tv shows. ' + 
+                   'I mentioned this my first paid job as a reminder of good old days.'
+    },
   ],
 
   display: function() {
@@ -440,9 +449,16 @@ var portfolio = {
           portfolioSection.append(HTMLprojectHeader);
 
           var image, project   = projects[i],
-          formattedProjectItem = HTMLprojectItem.replace('%url%', project.url).replace('%name%', project.name).replace('%date%', project.date).
+          formattedProjectItem = HTMLprojectItem.replace('%date%', project.date).
                                  replace('%title%', project.title).replace('%description%', project.description),
           formattedModalHeader = HTMLmodalHeader.replace('%index%', i).replace('%project%', project.name).replace('%carousel%', i).replace('%left%', i).replace('%right%', i);
+
+          if (project.url != '#') {
+            var formattedProjectURL = HTMLprojectURL.replace('%url%', project.url).replace('%name%', project.name);
+            formattedProjectItem    = formattedProjectItem.replace('%data%', formattedProjectURL);
+          } else {
+            formattedProjectItem = formattedProjectItem.replace('%data%', project.name);
+          }
 
           $('.project:last').append(formattedProjectItem);
           modalSection.append(formattedModalHeader);
