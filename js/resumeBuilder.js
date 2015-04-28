@@ -348,7 +348,7 @@ var portfolio = {
       description: 'QnA application built from scratch during training course from online school Thinknetica. ' +
                    "In this project I've used a bunch of technologies like Faye, Sphinx and Sidekiq for the first time." +
                    'This project helped me a lot in undestanding Rails better in such aspects as zero-downtime deployment, ' +
-                   'organization of pub/sub service, remote deploy and monitoring.',
+                   'organization of pub/sub service, REST api, remote deploy and monitoring.',
       screenshots : [
         {
           source: 'images/SolveSimple-1.png',
