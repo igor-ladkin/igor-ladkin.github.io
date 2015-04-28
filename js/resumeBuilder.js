@@ -19,7 +19,7 @@ var bio = {
            'and how web server works and that there is another brighter way with expressive programming ' +
            'language. And then I found Ruby. After that every rubyist knows that there is no way back.</p>' +
            '<p>Right now my fields of interest are tightly coupled with Rails and its ecosystem. But even thought ' +
-           'Rails is my go to framework I always try to expand my range of knowledge. That’s why I you are ' +
+           'Rails is my go to framework I always try to expand my range of knowledge. That’s why if you are ' +
            'interested in Node, Ember or any other modern framework or technology we can find a topic to discuss.</p>' +
            '<p>Besides programming I have more than ordinary hobbies. Like all of us I enjoy watching a good ' +
            'movie, but lately prefer a good book. Sport was in my life since early ages and some exercises are ' +
