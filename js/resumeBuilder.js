@@ -365,7 +365,7 @@ var portfolio = {
       ]
     },
     {
-      name: 'Building Blocks of Express.js',
+      name: 'Ember Solve',
       date: 'April, 2015',
       url: '#',
       title: 'Ember application for QnA API on Express',
