@@ -28,7 +28,7 @@ var bio = {
            'thing excites me so much that it’s hard to describe. The name of this thing is surfing, but that’s a ' +
            'completely different story.',
            
-  skills: [['Ruby on Rails', 0.7], ['JavaScript and jQuery', 0.63], ['HTML and CSS', 0.5], ['Node and Express', 0.30], ['Ember.js', 0.17]],
+  skills: [['Ruby on Rails', 0.7], ['JavaScript and jQuery', 0.63], ['HTML and CSS', 0.5], ['Ember.js', 0.35], ['Express.js', 0.20]],
   languages: [['Russian', 100], ['English', 80]],
   hobbies :['Travelling', 'Crossfit', 'Surfing', 'Snowboarding'],
 
