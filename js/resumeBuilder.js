@@ -208,6 +208,15 @@ var education = {
       description: 'Second part of online course from BerkeleyX teaches sophisticated SaaS+Agile skills, such as working with legacy code.'
     },
     {
+      title: 'Front-End Web Developer Nanodegree',
+      school: 'Udacity',
+      date: '2014',
+      location: 'Mountain View, CA, USA',
+      url: '#',
+      description: 'Long term training program from Udacity platform oriented on frontend part of modern ' +
+                   'web development.'
+    },
+    {
       title: 'Professional Wed Development with Ruby on Rails',
       school: 'Thinknetica',
       date: '2015',
