@@ -19,8 +19,9 @@ var HTMLeducationHeader     = "<ul id='education-list' class='clearfix'></ul>",
                               "<p>%description%</p></div></li>",
     HTMLeducationItemURL    = "<a href='%url%'>%data%</a>";
 
-var HTMLworkItem = "<div class='job clearfix'><div class='col-xs-3'><div class='where'>%employer%</div><div class='year'>%dates%</div></div>" +
-                   "<div class='col-xs-9'><div class='profession'>%profession%</div><div class='description'>%description%</div></div></div>";
+var HTMLworkEmployerURL = "<a href='%url%'>%employer%</a>",
+    HTMLworkItem        = "<div class='job clearfix'><div class='col-xs-3'><div class='where'>%employer%</div><div class='year'>%dates%</div></div>" +
+                          "<div class='col-xs-9'><div class='profession'>%profession%</div><div class='description'>%description%</div></div></div>";
 
 var HTMLprojectHeader = "<div class='project clearfix'></div>",
     HTMLprojectURL    = "<a href='%url%'>%name%</a>",
@@ -37,4 +38,3 @@ var HTMLmodalHeader = "<div class='modal fade' id='modalScreenshots-%index%' tab
                       "<a class='carousel-control left' href='#modalCarousel-%left%' data-slide='prev'><i class='glyphicon glyphicon-chevron-left'></i></a>" +
                       "<a class='carousel-control right' href='#modalCarousel-%right%' data-slide='next'><i class='glyphicon glyphicon-chevron-right'></i></a></div></div></div></div></div>",
     HTMLmodalItem   = "<div class='item'><img src='%source%' alt='%alter%'></div>";
-  

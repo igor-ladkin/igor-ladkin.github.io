@@ -4,11 +4,11 @@ var bio = {
   role: 'Web Developer',
   birthDate: 'Nov 24, 1988',
   contacts: {
-    mobile: '8-911-557-5678',
-    email: '<a href="mailto:dgkplan@googlemail.com">dgkplan@googlemail.com</a>',
+    mobile: '050-5809-9291',
+    email: '<a href="mailto:ladkin.is@gmail.com">ladkin.is@gmail.com</a>',
     skype: 'thrasherDGK',
     github: 'thrasherDGK',
-    location: 'Arkhangelsk, Russia'
+    location: 'Tokyo, Japan'
   },
   avatar: 'images/avatar.png',
   aboutMe: '<p>Cruel world of web developing I found for myself not so long ago. Of course as a student majoring ' +
@@ -27,30 +27,30 @@ var bio = {
            'new places and meeting different people. During my last trip to Bali I found something special. This ' +
            'thing excites me so much that it’s hard to describe. The name of this thing is surfing, but that’s a ' +
            'completely different story.',
-           
-  skills: [['Ruby on Rails', 0.7], ['JavaScript and jQuery', 0.63], ['HTML and CSS', 0.5], ['Ember.js', 0.35], ['Express.js', 0.20]],
-  languages: [['Russian', 100], ['English', 80]],
-  hobbies :['Travelling', 'Crossfit', 'Surfing', 'Snowboarding'],
+
+  skills: [['Ruby and Rails', 0.75], ['JavaScript', 0.68], ['React and Redux', 0.63], ['Elixir and Phoenix', 0.45], ['Elm', 0.18]],
+  languages: [['Russian', 100], ['English', 94]],
+  hobbies :['Travelling', 'Gym', 'Surfing', 'Netflix', 'Hiking'],
 
   display: function() {
     var age = function() {
-      var birthDate = new Date(bio.birthDate), 
+      var birthDate = new Date(bio.birthDate),
       currentDate   = new Date();
 
       var getMonthDate = function(dateObject) {
         return parseInt([dateObject.getMonth(), dateObject.getDate()].join(''));
       };
-      
+
       var age,
       birthMonthDay   = getMonthDate(birthDate),
       birthYear       = birthDate.getYear(),
       currentMonthDay = getMonthDate(currentDate),
       currentYear     = currentDate.getYear();
 
-      age = currentMonthDay >= birthMonthDay ? currentYear - birthYear : currentYear - birthYear - 1; 
+      age = currentMonthDay >= birthMonthDay ? currentYear - birthYear : currentYear - birthYear - 1;
 
       return age;
-    }(), 
+    }(),
     formatAboutMe = function() {
       var aboutMeSection = $('#about'),
       formattedAboutMe   = HTMLaboutMe.replace('%data%', bio.aboutMe);
@@ -71,7 +71,7 @@ var bio = {
     formatContacts = function() {
       var contacts          = bio.contacts,
       contactSection        = $('#contacts'),
-      formattedContactError = '<p>There are no avaliable contacts.</p>', 
+      formattedContactError = '<p>There are no avaliable contacts.</p>',
       formattedContactIcon,
       formattedContactTitle,
       formattedContactDescription;
@@ -108,7 +108,7 @@ var bio = {
         for (var i in skills) {
           formattedSkillItem = HTMLskillItem.replace('%data%', skills[i][0]).replace('%value%', skills[i][1]).
                                              replace('%style%', (458 * skills[i][1]).toFixed(1));
-          
+
           skillSection.append(formattedSkillItem);
         }
         skillSection.append(HTMLskillFooter);
@@ -178,7 +178,7 @@ var education = {
       location: 'Arkhangelsk, Russia',
       majors: ['Applied Mathematics'],
       degree: 'Specialist',
-      description: "Graduate paper: 'Discrete images determination on the basis of algebraical information theory'."
+      description: 'Graduate paper: "Discrete images determination on the basis of Algebraic Information Theory".'
     },
     {
       school: 'Centre for Development of Advanced Computing',
@@ -186,26 +186,18 @@ var education = {
       location: 'Delhi, India',
       majors: ['Web Development with .NET'],
       degree: 'Certificate',
-      description: 'Training program for civil servants in association with government of India.'
+      description: 'Training program for civil servants in association with the government of India.'
     }
   ],
   onlineCourses: [
     {
-      title: 'CS169.1x Engineering Software as a Service',
-      school: 'BerkeleyX',
-      date: '2014',
-      location: 'Berkeley, CA, USA',
-      url: 'https://s3.amazonaws.com/verify.edx.org/downloads/6ed98ac9c1ac40d3be71aed4dafda704/Certificate.pdf',
-      description: 'Online course from BerkeleyX teaches the fundamentals of software engineering using Agile ' +
-                   'techniques to develop Software as a Service using Ruby on Rails.'
-    },
-    {
-      title: 'CS169.2x Engineering Software as a Service, Part 2',
+      title: 'CS169.1x, CS169.2x Engineering Software as a Service',
       school: 'BerkeleyX',
       date: '2014',
       location: 'Berkeley, CA, USA',
       url: 'https://s3.amazonaws.com/verify.edx.org/downloads/3fcdb6b46fb84ab69c5b8d74a057e72f/Certificate.pdf',
-      description: 'Second part of online course from BerkeleyX teaches sophisticated SaaS+Agile skills, such as working with legacy code.'
+      description: 'Online course from BerkeleyX teaches software engineering using Agile ' +
+                   'techniques to build Software as a Service using Ruby on Rails.'
     },
     {
       title: 'Front-End Web Developer Nanodegree',
@@ -224,6 +216,23 @@ var education = {
       url: '#',
       description: 'Training program from online school Thinknetica covers wide range of topics starting from authentication, file upload and ' +
                    'goes through background jobs, full-text search, zero-downtime deploy and high load.'
+    },
+    {
+      title: 'Advanced Development of Rich SPA with React.js',
+      school: 'Thinknetica',
+      date: '2017',
+      location: 'Moscow, Russia',
+      url: '#',
+      description: 'Online bootcamp practicing building single page applications using React.js and Redux. ' +
+                   'Program includes topics related to production optimization, testing, server-side rendering, middlewares and many more.'
+    },
+    {
+      title: 'Machine Learning and Data Science Specialization',
+      school: 'Moscow Institute of Physics and Technology',
+      date: '2017',
+      location: 'Moscow, Russia',
+      url: 'https://www.coursera.org/specializations/machine-learning-data-analysis',
+      description: 'Coursera specialization for data scientist from MIPT. Still in progress.'
     }
   ],
 
@@ -242,7 +251,7 @@ var education = {
 
         if (schools && schools.length > 0) {
           for (var i in schools) {
-            formattedEducationItem = HTMLeducationItem.replace('%date%', schools[i].date).replace('%data%', schools[i].school + 
+            formattedEducationItem = HTMLeducationItem.replace('%date%', schools[i].date).replace('%data%', schools[i].school +
                                      '. ' + schools[i].majors[0]).replace('%description%', schools[i].description);
             educationSection.append(formattedEducationItem);
           }
@@ -266,7 +275,7 @@ var education = {
         educationSection.hide();
 
         return formattedEducationError;
-      } 
+      }
     }();
   }
 };
@@ -274,28 +283,42 @@ var education = {
 var work = {
   jobs: [
     {
+      employer: 'Voyagin',
+      url: 'https://www.govoyagin.com/',
+      profession: 'Web Developer',
+      location: 'Tokyo, Japan',
+      dates: 'November, 2015 - Present Time',
+      description: 'Major focus is improving functionality of the main company product. Among multiple tasks some of the ' +
+                   'most important were introducing tiered pricing scheme, new scheduling system, role based access control, ' +
+                   'purchase automation for partnership vendors, rebuilding frontend using React. ' +
+                   'Of course those were not the only tasks, as always a lot of attention was paid to refactoring and managing performace.'
+    },
+    {
       employer: 'City Hall',
+      url: '#',
       profession: 'System Administrator / Web Developer',
       location: 'Arkhangelsk, Russia',
-      dates: 'August, 2013 - Present Time',
-      description: 'Main field of focus is internal application of document workflow. Implementation of new ' + 
+      dates: 'August, 2013 - November, 2015',
+      description: 'Main field of focus is internal application of document workflow. Implementation of new ' +
                    'functionality, testing usability and integration with other services. Minor tasks are creating ' +
                    'application for realtime status check of all active network devices, server maintenance.'
     },
     {
       employer: 'City Hall',
+      url: '#',
       profession: 'System Administrator',
       location: 'Arkhangelsk, Russia',
       dates: 'November, 2012 - August, 2013',
-      description: 'User and recourse management via Microsoft administrative tools for local network. Routing ' + 
-      'organization between separate VLANs. Testing local services and fixing bugs.'
+      description: 'User and recourse management via Microsoft administrative tools for local network. Routing ' +
+                   'organization between separate VLANs. Testing local services and fixing bugs.'
     },
     {
       employer: 'Casting Agency',
+      url: '#',
       profession: 'Crowd Scenes Actor',
       location: 'Los-Angeles, CA',
       dates: 'June, 2010 - August, 2010',
-      description: 'Crowd scenes actor in different tv shows. ' + 
+      description: 'Crowd scenes actor in different tv shows. ' +
                    'I mentioned this my first paid job as a reminder of good old days.'
     },
   ],
@@ -309,8 +332,19 @@ var work = {
 
       if (jobs && jobs.length > 0) {
         for (var i in jobs) {
-          formattedWorkItem = HTMLworkItem.replace('%employer%', jobs[i].employer).replace('%dates%', jobs[i].dates).
-                                           replace('%profession%', jobs[i].profession).replace('%description%', jobs[i].description);
+          var employer, job = jobs[i];
+
+          if (job.url != '#') {
+            employer = HTMLworkEmployerURL.replace('%url%', job.url)
+                                          .replace('%employer%', job.employer);
+          } else {
+            employer = job.employer;
+          }
+
+          formattedWorkItem = HTMLworkItem.replace('%employer%', employer)
+                                          .replace('%dates%', job.dates)
+                                          .replace('%profession%', job.profession)
+                                          .replace('%description%', job.description);
 
           workSection.append(formattedWorkItem);
         }
@@ -323,7 +357,7 @@ var work = {
         return formattedWorkError;
       }
     }();
-  } 
+  }
 };
 
 var portfolio = {
@@ -501,7 +535,7 @@ var portfolio = {
 var map = {
   initialize: function() {
 
-    var map, locations, 
+    var map, locations,
     mapOptions = {
       zoomControl: true,
       disableDefaultUI: true
@@ -537,7 +571,7 @@ var map = {
         position: placeData.geometry.location,
         title: name
       });
-      
+
       // infoWindows are the little helper windows that open when you click
       // or hover over a pin on a map. They usually contain more information
       // about a location.
@@ -569,7 +603,7 @@ var map = {
       // creates a Google place search service object. PlacesService does the work of
       // actually searching for location data.
       var service = new google.maps.places.PlacesService(map);
-      
+
       // Iterates through the array of locations, creates a search object for each location
       for (place in locations) {
 
@@ -578,7 +612,7 @@ var map = {
           query: locations[place]
         }
 
-        // Actually searches the Google Maps API for location data and runs the callback 
+        // Actually searches the Google Maps API for location data and runs the callback
         // function with the search results after each search.
         service.textSearch(request, callback);
       }
@@ -606,14 +640,14 @@ var map = {
         currentLatValue = minLatValue;
 
         for (var i = 0; i < zoomLevel; i++) {
-          currentLatValue += 20 * (zoomLevel - 1) / Math.pow(2, zoomLevel - 1);  
+          currentLatValue += 20 * (zoomLevel - 1) / Math.pow(2, zoomLevel - 1);
         }
-        
+
         return currentLatValue;
       };
 
       return new google.maps.LatLngBounds(new google.maps.LatLng(-calculateLat(zoomValue - 1), -180),
-                                          new google.maps.LatLng(calculateLat(zoomValue - 1), 180));  
+                                          new google.maps.LatLng(calculateLat(zoomValue - 1), 180));
     };
 
     // Check if map center belongs to defined bounds
@@ -632,7 +666,7 @@ var map = {
 
       if (Y < AminY) { Y = AminY; }
       if (Y > AmaxY) { Y = AmaxY; }
-   
+
        map.setCenter(new google.maps.LatLng(Y,X));
     };
 
@@ -650,15 +684,15 @@ var map = {
     });
 
     google.maps.event.addListener(map, 'center_changed', function() {
-      checkCenter();  
-    });  
+      checkCenter();
+    });
   },
 
   display: function() {
     window.addEventListener('load', map.initialize);
-    
+
     $('#mapDiv').append(HTMLgoogleMap);
-  } 
+  }
 };
 
 bio.display();
