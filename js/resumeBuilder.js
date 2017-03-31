@@ -28,7 +28,7 @@ var bio = {
            'thing excites me so much that it’s hard to describe. The name of this thing is surfing, but that’s a ' +
            'completely different story.',
 
-  skills: [['Ruby and Rails', 0.75], ['JavaScript', 0.68], ['React and Redux', 0.63], ['Elixir and Phoenix', 0.45], ['Elm', 0.18]],
+  skills: [['Ruby and Rails', 0.75], ['JavaScript', 0.68], ['React and Redux', 0.63], ['Elixir and Phoenix', 0.45], ['Rect Native', 0.35], ['Elm', 0.18]],
   languages: [['Russian', 100], ['English', 94]],
   hobbies :['Travelling', 'Gym', 'Surfing', 'Netflix', 'Hiking'],
 
@@ -363,11 +363,57 @@ var work = {
 var portfolio = {
   projects: [
     {
+      name: 'Voyagin',
+      date: 'November, 2015 - Present Time',
+      url: 'https://www.govoyagin.com/',
+      title: 'Marketplace for Travelling Activities',
+      description: 'Main company product. Allows travellers to experience unique activities in many contries all over the world.',
+      screenshots : [
+        {
+          source: 'images/Voyagin-1.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/Voyagin-2.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/Voyagin-3.png',
+          alter: 'screenshot'
+        }
+      ]
+    },
+    {
+      name: 'YABP',
+      date: 'December, 2016 - Present Time',
+      url: 'https://github.com/thrasherDGK/YABP',
+      title: 'Yet Another Blogging Platfrom',
+      description: 'Simpe interface for blog platform application with some nice features. ' +
+                   'While working on this pet project I tried to focus on topics outside of my comfort zone. ' +
+                   'Server-side rendering, custom Redux middlewares to handle async API requests, ' +
+                   'routing with preliminary data preparation to avoid unnecessary server access (plus nobody likes spinners), ' +
+                   "creating React component using external libraries which don't have React ports, and many more.",
+      screenshots : [
+        {
+          source: 'images/YABP-1.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/YABP-2.png',
+          alter: 'screenshot'
+        },
+        {
+          source: 'images/YABP-3.png',
+          alter: 'screenshot'
+        }
+      ]
+    },
+    {
       name: 'nControl',
-      date: 'August, 2013 - Present Time',
+      date: 'August, 2013 - November, 2015',
       url: '#',
       title: 'CRM application',
-      description: 'Internal application for organization document workflow and management network recourses.',
+      description: 'Internal application for organization document workflow and network recourses management.',
       screenshots : [
         {
           source: 'images/ncontrol-1.png',
@@ -386,7 +432,7 @@ var portfolio = {
     {
       name: 'Solve Simple',
       date: 'December, 2014 - March, 2015',
-      url: 'https://github.com/thrasherDGK/SolveSimple',
+      url: '#',
       title: 'Ask community for help',
       description: 'QnA application built from scratch during training course from online school Thinknetica. ' +
                    "In this project I've used a bunch of technologies like Faye, Sphinx and Sidekiq for the first time." +
@@ -407,71 +453,6 @@ var portfolio = {
         }
       ]
     },
-    {
-      name: 'Ember Solve',
-      date: 'April, 2015',
-      url: '#',
-      title: 'Ember application for QnA API on Express',
-      description: 'My first Ember application built with Ember-CLI. Simple QnA application without any fancy features ' +
-                   'but it works. Looking forward to dig deep into Ember.',
-      screenshots : [
-        {
-          source: 'images/EmberSolve-1.png',
-          alter: 'screenshot'
-        },
-        {
-          source: 'images/EmberSolve-2.png',
-          alter: 'screenshot'
-        },
-        {
-          source: 'images/EmberSolve-3.png',
-          alter: 'screenshot'
-        }
-      ]
-    },
-    {
-      name: 'Building Blocks of Express.js',
-      date: 'March, 2015',
-      url: 'https://protected-earth-2357.herokuapp.com',
-      title: 'Simple web API with Express.js',
-      description: 'Web API based on the course with the same name from Code School. This project helped me consolidate knowledge of Express basics ' +
-                   'plus it was a first time when I tried redis as main database.',
-      screenshots : [
-        {
-          source: 'images/express-1.png',
-          alter: 'screenshot'
-        },
-        {
-          source: 'images/express-2.png',
-          alter: 'screenshot'
-        },
-        {
-          source: 'images/express-3.png',
-          alter: 'screenshot'
-        }
-      ]
-    },
-    {
-      name: 'Ruby Warrior',
-      date: 'October, 2014',
-      url: '#',
-      title: 'Personal Portfolio',
-      description: 'One of the first project for Udacity frontend nano-degree.',
-      screenshots: [
-        {
-          source: 'images/1.png',
-          alter: 'screenshot'
-        },
-        {
-          source: 'images/2.png',
-          alter: 'screenshot'
-        },
-        {
-          source: 'images/3.png',
-          alter: 'screenshot'
-        }
-      ]
-    }
   ],
 
   display: function() {
