@@ -11,24 +11,23 @@ var bio = {
     location: 'Tokyo, Japan'
   },
   avatar: 'images/avatar.png',
-  aboutMe: '<p>Cruel world of web developing I found for myself not so long ago. Of course as a student majoring ' +
-           'in applied mathematics I’ve tried a lot of programming on different languages. But during those ' +
-           'days desire to solve actual problems exceeded needs of learning new interesting technologies. ' +
-           'And that’s how I stuck with C++ for a long time. My way to web development was not ' +
-           'straightforward. I knew some basics like HTML, CSS and a little bit of PHP, but I had no clue why ' +
-           'and how web server works and that there is another brighter way with expressive programming ' +
-           'language. And then I found Ruby. After that every rubyist knows that there is no way back.</p>' +
-           '<p>Right now my fields of interest are tightly coupled with Rails and its ecosystem. But even thought ' +
-           'Rails is my go to framework I always try to expand my range of knowledge. That’s why if you are ' +
-           'interested in Node, Ember or any other modern framework or technology we can find a topic to discuss.</p>' +
-           '<p>Besides programming I have more than ordinary hobbies. Like all of us I enjoy watching a good ' +
-           'movie, but lately prefer a good book. Sport was in my life since early ages and some exercises are ' +
-           'good for your health so when I can I train. Another my interest is traveling. I really take pleasure in visiting ' +
-           'new places and meeting different people. During my last trip to Bali I found something special. This ' +
-           'thing excites me so much that it’s hard to describe. The name of this thing is surfing, but that’s a ' +
-           'completely different story.',
+  aboutMe: '<p>Web development. Huh, it’s been almost 4 years since I decided to dive deep into this rabbit hole and fully commit myself trying ' +
+           'to understand how to build useful and convenient web applications. My way to web development was not straightforward. ' +
+           'As a student majoring in applied mathematics I’ve tried a lot different programming languages but during those days desire to solve ' +
+           'actual problems exceeded needs of learning new interesting technologies. That’s how I stuck with C++ and desktop for a long time.</p>' +
+           '<p>At that time I knew that web servers exist (I was using them all the time, duh…) but I had no clue why and how they work, ' +
+           'so I’ve got interested. I knew some basics of HTML, CSS and a little bit of PHP. I’ve tried Perl, C#. None of these felt right. ' +
+           'Then I found Ruby. After that, every Rubyist knows that there is no way back.</p>' +
+           '<p>Right now my fields of interest are tightly coupled with functional programming and data science. Even though Rails still plays ' +
+           'a huge role in my everyday work I always take a look at something new. Elixir, React, Elm, Rx, GraphQL and much more. ' +
+           'So if you are interested in any technology related to web/mobile development, we will definitely find a topic to discuss.</p>' +
+           '<p>Besides programming, I have more than ordinary hobbies. Like all of us I enjoy watching a good movie, but lately, prefer a good book. ' +
+           'The sport was in my life since early ages and some exercises are good for your health so when I can I train. Another my interest ' +
+           'is traveling. I really take pleasure in visiting new places and meeting interesting people. During my last trip to Bali, ' +
+           'I found something special. This thing excites me so much that it’s hard to describe. The name of this thing is surfing, ' +
+           'but that’s a completely different story.</p>',
 
-  skills: [['Ruby and Rails', 0.75], ['JavaScript', 0.68], ['React and Redux', 0.63], ['Elixir and Phoenix', 0.45], ['Rect Native', 0.35], ['Elm', 0.18]],
+  skills: [['Ruby and Rails', 0.75], ['JavaScript', 0.68], ['React and Redux', 0.63], ['Elixir and Phoenix', 0.45], ['React Native', 0.35], ['Elm', 0.18]],
   languages: [['Russian', 100], ['English', 94]],
   hobbies :['Travelling', 'Gym', 'Surfing', 'Netflix', 'Hiking'],
 
