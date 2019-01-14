@@ -757,7 +757,8 @@ var map = {
         currentLatValue = minLatValue;
 
         for (var i = 0; i < zoomLevel; i++) {
-          currentLatValue += 20 * (zoomLevel - 1) / Math.pow(2, zoomLevel - 1);
+          currentLatValue +=
+            (20 * (zoomLevel - 1)) / Math.pow(2, zoomLevel - 1);
         }
 
         return currentLatValue;
