@@ -14,19 +14,19 @@ var bio = {
   aboutMe:
     "<p>Web development. Huh, it’s been more than 5 years since I decided to dive deep into this rabbit hole and fully commit myself trying " +
     "to understand how to build useful and convenient web applications. My way to web development was not straightforward. " +
-    "As a student majoring in applied mathematics I’ve tried a lot different programming languages but during those days desire to solve " +
-    "actual problems exceeded needs of learning new interesting technologies. That’s how I stuck with C++ and desktop for a long time.</p>" +
+    "As a student majoring in applied mathematics, I’ve tried a lot different programming languages but during those days desire to solve " +
+    "actual problems exceeded needs of learning new exciting technologies. That’s how I stuck with C++ and desktop for a long time.</p>" +
     "<p>At that time I knew that web servers exist (I was using them all the time, duh…) but I had no clue why and how they work, " +
     "so I’ve got interested. I knew some basics of HTML, CSS and a little bit of PHP. I’ve tried Perl, C#. None of these felt right. " +
     "Then I found Ruby. After that, every Rubyist knows that there is no way back.</p>" +
     "<p>Right now my fields of interest are tightly coupled with functional programming and data science. Even though Rails still plays " +
-    "a huge role in my everyday work I always take a look at something new. Elixir, React, Elm, Rx, GraphQL and much more. " +
-    "So if you are interested in any technology related to web/mobile development, we will definitely find a topic to discuss.</p>" +
+    "a huge role in my everyday work, I always take a look at something new. Elixir, React, Elm, Rx, GraphQL and much more. " +
+    "So if you are interested in any technology related to web/mobile development, we have a topic to discuss.</p>" +
     "<p>Besides programming, I have more than ordinary hobbies. Like all of us I enjoy watching a good movie, but lately, prefer a good book. " +
-    "The sport was in my life since early ages and some exercises are good for your health so when I can I train. Another my interest " +
-    "is traveling. I really take pleasure in visiting new places and meeting interesting people. During my first trip to Bali, " +
+    "The sport was in my life since the early ages, and some exercises are good for your health so when I can I train. Another my interest " +
+    "is traveling. I take pleasure in visiting new places and meeting interesting people. During my first trip to Bali, " +
     "I found something special. This thing excites me so much that it’s hard to describe. The name of this thing is surfing, " +
-    "but that’s a completely different story.</p>",
+    "but that’s an entirely different story.</p>",
 
   skills: [
     ["Ruby and Rails", 0.85],
