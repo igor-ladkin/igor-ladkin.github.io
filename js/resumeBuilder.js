@@ -34,7 +34,7 @@ var bio = {
     ["React and Redux", 0.69],
     ["Elixir and Phoenix", 0.65],
     ["Elm", 0.5],
-    ["Go", 0.25]
+    ["Python", 0.35]
   ],
   languages: [["Russian", 100], ["English", 94]],
   hobbies: ["Travelling", "Gym", "Surfing", "Netflix", "Hiking"],
